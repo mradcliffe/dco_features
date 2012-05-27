@@ -1,0 +1,22 @@
+<?php
+
+include_once('dco_imagecache.features.inc');
+
+function dco_imagecache_image_styles_alter(&$styles) {
+  foreach (module_implements('imagecache_default_presets') as $module) {
+    $module_styles = module_invoke($module, 'imagecache_default_presets');
+    foreach ($module_styles as $style_name => $style) {
+      $style['name'] = $style_name;
+      $style['module'] = $module;
+      $style['storage'] = IMAGE_STORAGE_DEFAULT;
+      foreach ($style['actions'] as $key => $effect) {
+        $effect['action'] = str_replace('cache', '', $effect['action']);
+        $definition = image_effect_definition_load($effect['action']);
+        $effect = array_merge($definition, $effect);
+        $style['effects'][$key] = $effect;
+      }
+      $styles[$style_name] = $style;
+    }
+  }
+}
+

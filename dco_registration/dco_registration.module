@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DCO Registration feature.
+ */
+
+include_once 'dco_registration.features.inc';

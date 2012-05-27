@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DCO Session feature.
+ */
+
+include_once 'dco_session.features.inc';
