@@ -58,40 +58,16 @@ function dco_base_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu_block-1' => array(
-          'module' => 'menu_block',
-          'delta' => 1,
-          'region' => 'sidebar_first',
+        'views-Sponsors-block_3' => array(
+          'module' => 'views',
+          'delta' => 'Sponsors-block_3',
+          'region' => 'footer_first',
           'weight' => '-10',
         ),
-        'views-commerce_cart_block-block_1' => array(
+        'views-Sponsors-block_2' => array(
           'module' => 'views',
-          'delta' => 'commerce_cart_block-block_1',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'views-Sponsors-block_4' => array(
-          'module' => 'views',
-          'delta' => 'Sponsors-block_4',
-          'region' => 'sidebar_second',
-          'weight' => '-7',
-        ),
-        'views-tweets-block' => array(
-          'module' => 'views',
-          'delta' => 'tweets-block',
-          'region' => 'sidebar_second',
-          'weight' => '-6',
-        ),
-        'views-attendee_warning-block_1' => array(
-          'module' => 'views',
-          'delta' => 'attendee_warning-block_1',
-          'region' => 'regnotice',
-          'weight' => '0',
-        ),
-        'system-main-menu' => array(
-          'module' => 'system',
-          'delta' => 'main-menu',
-          'region' => 'footer',
+          'delta' => 'Sponsors-block_2',
+          'region' => 'footer_first',
           'weight' => '-10',
         ),
       ),

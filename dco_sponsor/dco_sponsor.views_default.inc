@@ -398,6 +398,8 @@ function dco_sponsor_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['style_options']['fill_single_line'] = 1;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Content: Referenced product */
   $handler->display->display_options['relationships']['field_product_reference_product_id']['id'] = 'field_product_reference_product_id';
@@ -549,7 +551,8 @@ function dco_sponsor_views_default_views() {
   $handler->display->display_options['menu']['title'] = 'Sponsor Benefits';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context'] = 1;
+  $handler->display->display_options['tab_options']['weight'] = '0';
   $export['sponsorship_benefits'] = $view;
 
   return $export;

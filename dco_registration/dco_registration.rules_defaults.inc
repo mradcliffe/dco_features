@@ -14,15 +14,14 @@ function dco_registration_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules", "commerce", "registration" ],
-      "ON" : [ "registration_update" ],
+      "ON" : [ "registration_update", "registration_insert" ],
       "IF" : [
-        { "data_is" : { "data" : [ "registration:state" ], "value" : "1" } },
-        { "data_is" : { "data" : [ "registration-unchanged:state" ], "value" : "2" } },
+        { "data_is" : { "data" : [ "registration:state:name" ], "value" : "complete" } },
         { "NOT data_is_empty" : { "data" : [ "registration:anon-mail" ] } },
         { "NOT entity_exists" : {
             "type" : "user",
             "property" : "mail",
-            "value" : "[registration:anon-mail]"
+            "value" : [ "registration:anon-mail" ]
           }
         }
       ],
@@ -30,12 +29,50 @@ function dco_registration_default_rules_configuration() {
         { "entity_create" : {
             "USING" : {
               "type" : "user",
-              "param_name" : "registration-[registration:registration-id]",
+              "param_name" : [ "registration:anon-mail" ],
               "param_mail" : [ "registration:anon-mail" ]
             },
-            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+            "PROVIDE" : { "entity_created" : { "new_account" : "New Account" } }
+          }
+        },
+        { "user_unblock" : { "account" : [ "new-account" ] } },
+        { "entity_save" : { "data" : [ "new-account" ], "immediate" : 1 } },
+        { "data_set" : { "data" : [ "registration:mail" ] } },
+        { "data_set" : { "data" : [ "registration:user" ], "value" : [ "new-account" ] } },
+        { "entity_save" : { "data" : [ "registration" ] } }
+      ]
+    }
+  }');
+  $items['rules_reconcile_registration_accounts'] = entity_import('rules_config', '{ "rules_reconcile_registration_accounts" : {
+      "LABEL" : "Reconcile registration accounts",
+      "PLUGIN" : "reaction rule",
+      "TAGS" : [ "dco" ],
+      "REQUIRES" : [ "rules", "commerce", "registration" ],
+      "ON" : [ "registration_update", "registration_insert" ],
+      "IF" : [
+        { "data_is" : { "data" : [ "registration:state:name" ], "value" : "complete" } },
+        { "NOT data_is_empty" : { "data" : [ "registration:anon-mail" ] } },
+        { "entity_exists" : {
+            "type" : "user",
+            "property" : "mail",
+            "value" : [ "registration:anon-mail" ]
           }
         }
+      ],
+      "DO" : [
+        { "entity_query" : {
+            "USING" : {
+              "type" : "user",
+              "property" : "mail",
+              "value" : [ "registration:anon-mail" ],
+              "limit" : "1"
+            },
+            "PROVIDE" : { "entity_fetched" : { "existing_account" : "Existing account" } }
+          }
+        },
+        { "data_set" : { "data" : [ "registration:mail" ] } },
+        { "data_set" : { "data" : [ "registration:user" ], "value" : [ "existing-account:0" ] } },
+        { "entity_save" : { "data" : [ "registration" ] } }
       ]
     }
   }');
