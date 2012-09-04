@@ -959,7 +959,7 @@ function dco_session_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '6',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -1041,7 +1041,7 @@ function dco_session_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '9',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1168,10 +1168,9 @@ function dco_session_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'node_reference',
           'settings' => array(),
-          'type' => 'node_reference_default',
-          'weight' => 10,
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1246,10 +1245,9 @@ function dco_session_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => '3',
+          'type' => 'hidden',
+          'weight' => '5',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1365,7 +1363,7 @@ function dco_session_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '9',
+          'weight' => '10',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1660,10 +1658,9 @@ function dco_session_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'node_reference',
           'settings' => array(),
-          'type' => 'node_reference_default',
-          'weight' => '1',
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1794,10 +1791,9 @@ function dco_session_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'node_reference',
           'settings' => array(),
-          'type' => 'node_reference_default',
-          'weight' => '4',
+          'type' => 'hidden',
+          'weight' => '8',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1909,10 +1905,9 @@ function dco_session_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'file',
           'settings' => array(),
-          'type' => 'file_default',
-          'weight' => '5',
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'full' => array(
           'label' => 'above',
@@ -2084,10 +2079,9 @@ function dco_session_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'user_reference',
           'settings' => array(),
-          'type' => 'user_reference_default',
-          'weight' => '0',
+          'type' => 'hidden',
+          'weight' => '1',
         ),
         'full' => array(
           'label' => 'inline',
@@ -2186,9 +2180,8 @@ function dco_session_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
+          'type' => 'hidden',
           'weight' => '2',
         ),
         'full' => array(

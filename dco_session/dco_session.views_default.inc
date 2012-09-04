@@ -185,13 +185,21 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = '0';
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Event (field_event) */
+  $handler->display->display_options['filters']['field_event_nid']['id'] = 'field_event_nid';
+  $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
+  $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
+  $handler->display->display_options['filters']['field_event_nid']['value'] = array(
+    111 => '111',
+  );
 
   /* Display: Totals */
   $handler = $view->new_display('page', 'Totals', 'page_1');
-  $handler->display->display_options['path'] = 'reports/session-preferences';
-  $handler->display->display_options['menu']['title'] = 'Session Preferences';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'primary-links';
+  $handler->display->display_options['path'] = 'admin/registration/session-preferences';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Sessions';
+  $handler->display->display_options['menu']['weight'] = '15';
+  $handler->display->display_options['menu']['context'] = 0;
   $export['session_votes'] = $view;
 
   $view = new view;
@@ -423,7 +431,6 @@ function dco_session_views_default_views() {
   $handler = $view->new_display('page', 'Page: Accepted', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Accepted sessions';
-  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['text']['id'] = 'area';
@@ -771,7 +778,6 @@ function dco_session_views_default_views() {
   $handler = $view->new_display('page', 'Page: Proposed', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Proposed Sessions';
-  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = '';
@@ -824,12 +830,15 @@ function dco_session_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
-  $handler->display->display_options['header']['text']['id'] = 'area';
+  $handler->display->display_options['header']['text']['id'] = 'text';
   $handler->display->display_options['header']['text']['table'] = 'views';
   $handler->display->display_options['header']['text']['field'] = 'area';
-  $handler->display->display_options['header']['text']['empty'] = FALSE;
-  $handler->display->display_options['header']['text']['content'] = 'Session proposals must be submitted by November 20.';
+  $handler->display->display_options['header']['text']['empty'] = TRUE;
+  $handler->display->display_options['header']['text']['content'] = '<ul class="item-list links">
+<li><a href="/node/add/session" title="Submit Session">Submit your session</a></li>
+</ul>';
   $handler->display->display_options['header']['text']['format'] = '1';
+  $handler->display->display_options['header']['text']['tokenize'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Speaker(s) (field_speakers) */
   $handler->display->display_options['relationships']['field_speakers_uid']['id'] = 'field_speakers_uid';
@@ -1654,6 +1663,58 @@ function dco_session_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Profile: Personal information: First name */
+  $handler->display->display_options['fields']['value']['id'] = 'value';
+  $handler->display->display_options['fields']['value']['table'] = 'profile_value_profile_first';
+  $handler->display->display_options['fields']['value']['field'] = 'value';
+  $handler->display->display_options['fields']['value']['relationship'] = 'field_speakers_uid';
+  $handler->display->display_options['fields']['value']['label'] = '';
+  $handler->display->display_options['fields']['value']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['value']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['value']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['value']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['value']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['value']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['value']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['value']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['value']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['value']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['value']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['value']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['value']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['value']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['value']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['value']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['value']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['value']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['value']['link_to_user'] = 1;
+  /* Field: Profile: Personal information: Last name */
+  $handler->display->display_options['fields']['value_1']['id'] = 'value_1';
+  $handler->display->display_options['fields']['value_1']['table'] = 'profile_value_profile_last';
+  $handler->display->display_options['fields']['value_1']['field'] = 'value';
+  $handler->display->display_options['fields']['value_1']['relationship'] = 'field_speakers_uid';
+  $handler->display->display_options['fields']['value_1']['label'] = '';
+  $handler->display->display_options['fields']['value_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['value_1']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['value_1']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['value_1']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['value_1']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['value_1']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['value_1']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['value_1']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['value_1']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['value_1']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['value_1']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['value_1']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['value_1']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['value_1']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['value_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['value_1']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['value_1']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['value_1']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['value_1']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['value_1']['link_to_user'] = 1;
   /* Field: Content: Speaker(s) */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
@@ -1661,6 +1722,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['fields']['field_speakers']['label'] = '';
   $handler->display->display_options['fields']['field_speakers']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_speakers']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_speakers']['alter']['text'] = '[value] [value_1]';
   $handler->display->display_options['fields']['field_speakers']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_speakers']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_speakers']['alter']['external'] = 0;
@@ -1688,7 +1750,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['fields']['picture']['table'] = 'users';
   $handler->display->display_options['fields']['picture']['field'] = 'picture';
   $handler->display->display_options['fields']['picture']['relationship'] = 'field_speakers_uid';
-  $handler->display->display_options['fields']['picture']['label'] = 'Speakers';
+  $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['alter']['alter_text'] = 1;
   $handler->display->display_options['fields']['picture']['alter']['text'] = '[picture]<br />
 [field_speakers]';
@@ -1704,7 +1766,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['fields']['picture']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['picture']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['picture']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['picture']['hide_empty'] = 0;
   $handler->display->display_options['fields']['picture']['empty_zero'] = 0;
@@ -1730,7 +1792,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_type'] = 'span';
   $handler->display->display_options['fields']['title']['element_label_colon'] = 1;
   $handler->display->display_options['fields']['title']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['title']['hide_empty'] = 0;
