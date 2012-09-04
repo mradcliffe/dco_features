@@ -731,6 +731,7 @@ function dco_signup_views_default_views() {
   $handler = $view->new_display('block', 'Total Attending', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Registered';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -781,11 +782,13 @@ function dco_signup_views_default_views() {
   $handler = $view->new_display('block', 'Medium', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Medium';
+  $handler->display->display_options['enabled'] = FALSE;
 
   /* Display: Large */
   $handler = $view->new_display('block', 'Large', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Large';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['value']['id'] = 'value';
@@ -800,6 +803,7 @@ function dco_signup_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_4');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -1067,7 +1071,7 @@ function dco_signup_views_default_views() {
   /* Display: Email All Users */
   $handler = $view->new_display('page', 'Email All Users', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Email All Users';
+  $handler->display->display_options['title'] = '2011 Signup Users';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -1213,14 +1217,14 @@ function dco_signup_views_default_views() {
       'label' => '',
     ),
     'action::system_send_email_action' => array(
-      'selected' => 0,
+      'selected' => 1,
       'use_queue' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
     ),
     'action::mimemail_send_email_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'use_queue' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -1282,12 +1286,17 @@ function dco_signup_views_default_views() {
   );
   $handler->display->display_options['filters']['uid']['group'] = '0';
   $handler->display->display_options['filters']['uid']['expose']['operator'] = FALSE;
-  $handler->display->display_options['path'] = 'reports/attendee-registration/email-all';
+  $handler->display->display_options['path'] = 'admin/registration/all-users';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = '2011 Users';
+  $handler->display->display_options['menu']['weight'] = '25';
+  $handler->display->display_options['menu']['context'] = 0;
 
   /* Display: Late Registrants */
   $handler = $view->new_display('block', 'Late Registrants', 'block_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Late Registration';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_calc';
   $handler->display->display_options['style_options']['grouping'] = '';
@@ -1481,6 +1490,7 @@ function dco_signup_views_default_views() {
   $handler = $view->new_display('block', 'Registrants', 'block_7');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Registrants';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = '';
