@@ -2,6 +2,10 @@
 
 include_once('dco_imagecache.features.inc');
 
+/*
+ * This is no longer necessary and will screw up trying to modify
+ * image styles.
+ *
 function dco_imagecache_image_styles_alter(&$styles) {
   foreach (module_implements('imagecache_default_presets') as $module) {
     $module_styles = module_invoke($module, 'imagecache_default_presets');
@@ -19,4 +23,5 @@ function dco_imagecache_image_styles_alter(&$styles) {
     }
   }
 }
+*/
 
