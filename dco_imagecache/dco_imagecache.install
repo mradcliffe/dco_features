@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * Migrate imagecache presets to image styles.
+ */
+function dco_imagecache_update_7000(&$sandbox) {
+
+  $presets = dco_imagecache_imagecache_default_presets();
+  $styles = array();
+
+  foreach ($presets as $name => $preset) {
+
+    $style = array(
+      'name' => $name,
+    );
+    $style = image_style_save($style);
+
+    $styles[$name] = array(
+      'data' => $style['name'],
+      'children' => array(),
+    );
+    
+    foreach ($preset['actions'] as $key => $action) {
+      $action['action'] = str_replace('cache', '', $action['action']);
+      $definition = image_effect_definition_load($action['action']);
+      $effect = array_merge($definition, $action);
+      $effect['isid'] = $style['isid'];
+      $effect = image_effect_save($effect);
+      $style['effects'][$key] = $effect;
+      $styles[$name]['children'][] = $effect['action'];
+    }
+
+    $style = image_style_save($style);
+  }
+
+  return t('Updated the following image styles from image cache presets: !list', array('!list' => theme('item_list', array('items' => $styles))));
+
+}
