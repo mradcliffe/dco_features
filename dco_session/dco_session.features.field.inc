@@ -542,6 +542,9 @@ function dco_session_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_accepted',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -668,6 +671,9 @@ function dco_session_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_session_room',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'nid' => array(
           'columns' => array(
@@ -688,23 +694,23 @@ function dco_session_field_default_fields() {
           'view' => 'view',
         ),
         'referenceable_types' => array(
-          'bof_session' => 0,
           'event' => 0,
+          'invoice' => 0,
           'news' => 0,
           'page' => 0,
           'product' => 0,
+          'report' => 0,
           'room' => 'room',
           'schedule_item' => 0,
           'session' => 0,
           'sponsor' => 0,
           'time_slot' => 0,
+          'webform' => 0,
         ),
         'view' => array(
-          'args' => array(
-            0 => '',
-          ),
-          'display_name' => 'default',
-          'view_name' => '--',
+          'args' => array(),
+          'display_name' => '',
+          'view_name' => '',
         ),
       ),
       'translatable' => '0',
@@ -802,6 +808,9 @@ function dco_session_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_session_slot',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'nid' => array(
           'columns' => array(
@@ -822,23 +831,23 @@ function dco_session_field_default_fields() {
           'view' => 'view',
         ),
         'referenceable_types' => array(
-          'bof_session' => 0,
           'event' => 0,
+          'invoice' => 0,
           'news' => 0,
           'page' => 0,
           'product' => 0,
+          'report' => 0,
           'room' => 0,
           'schedule_item' => 0,
           'session' => 0,
           'sponsor' => 0,
           'time_slot' => 'time_slot',
+          'webform' => 0,
         ),
         'view' => array(
-          'args' => array(
-            0 => '',
-          ),
-          'display_name' => 'default',
-          'view_name' => '--',
+          'args' => array(),
+          'display_name' => '',
+          'view_name' => '',
         ),
       ),
       'translatable' => '0',
@@ -1000,6 +1009,9 @@ function dco_session_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_accepted',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -1029,11 +1041,9 @@ function dco_session_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'session',
-      'default_value' => array(
-        0 => array(
-          'value' => '',
-        ),
-      ),
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1089,7 +1099,7 @@ function dco_session_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_accepted',
       'label' => 'Status',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'max' => '2',
         'min' => '0',
@@ -1099,11 +1109,9 @@ function dco_session_field_default_fields() {
       ),
       'weight' => '1',
       'widget' => array(
-        'active' => '0',
+        'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'default_value_php' => NULL,
-        ),
+        'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '10',
       ),
@@ -1322,6 +1330,9 @@ function dco_session_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_featured',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -1353,9 +1364,11 @@ function dco_session_field_default_fields() {
       'bundle' => 'session',
       'default_value' => array(
         0 => array(
-          'value' => NULL,
+          'value' => 0,
         ),
       ),
+      'default_value_function' => '',
+      'default_value_php' => '',
       'deleted' => '0',
       'description' => 'Checking this will promote the session to the feature sessions slideshow on the front page.',
       'display' => array(
@@ -1435,7 +1448,7 @@ function dco_session_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_featured',
       'label' => 'Featured Session',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'max' => '1',
         'min' => '0',
@@ -1445,10 +1458,9 @@ function dco_session_field_default_fields() {
       ),
       'weight' => '2',
       'widget' => array(
-        'active' => '0',
+        'active' => 1,
         'module' => 'options',
         'settings' => array(
-          'default_value_php' => NULL,
           'display_label' => 0,
         ),
         'type' => 'options_onoff',
@@ -1466,6 +1478,9 @@ function dco_session_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_marketing_image',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -1481,7 +1496,7 @@ function dco_session_field_default_fields() {
       ),
       'module' => 'image',
       'settings' => array(
-        'default_image' => NULL,
+        'default_image' => 0,
         'description_field' => '0',
         'field_permissions' => array(
           'edit' => 'edit',
@@ -1567,26 +1582,25 @@ function dco_session_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_marketing_image',
       'label' => 'Marketing image',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'alt_field' => 0,
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
-        'max_resolution' => '0',
-        'min_resolution' => '0',
+        'max_resolution' => '',
+        'min_resolution' => '',
         'title_field' => 0,
         'user_register_form' => FALSE,
       ),
       'weight' => '-2',
       'widget' => array(
-        'active' => '0',
+        'active' => 1,
         'module' => 'image',
         'settings' => array(
           'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'bar',
-          'use_default_image' => 0,
         ),
         'type' => 'image_image',
         'weight' => '4',
@@ -1603,6 +1617,9 @@ function dco_session_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_session_room',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'nid' => array(
           'columns' => array(
@@ -1623,23 +1640,23 @@ function dco_session_field_default_fields() {
           'view' => 'view',
         ),
         'referenceable_types' => array(
-          'bof_session' => 0,
           'event' => 0,
+          'invoice' => 0,
           'news' => 0,
           'page' => 0,
           'product' => 0,
+          'report' => 0,
           'room' => 'room',
           'schedule_item' => 0,
           'session' => 0,
           'sponsor' => 0,
           'time_slot' => 0,
+          'webform' => 0,
         ),
         'view' => array(
-          'args' => array(
-            0 => '',
-          ),
-          'display_name' => 'default',
-          'view_name' => '--',
+          'args' => array(),
+          'display_name' => '',
+          'view_name' => '',
         ),
       ),
       'translatable' => '0',
@@ -1648,11 +1665,7 @@ function dco_session_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'session',
-      'default_value' => array(
-        0 => array(
-          'nid' => NULL,
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => 'Select room(s) in which the session occurs.',
       'display' => array(
@@ -1708,19 +1721,15 @@ function dco_session_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_session_room',
       'label' => 'Room',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'weight' => '0',
       'widget' => array(
-        'active' => '0',
+        'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'autocomplete_match' => 'contains',
-          'default_value_php' => NULL,
-          'size' => 60,
-        ),
+        'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '9',
       ),
@@ -1736,6 +1745,9 @@ function dco_session_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_session_slot',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'nid' => array(
           'columns' => array(
@@ -1756,23 +1768,23 @@ function dco_session_field_default_fields() {
           'view' => 'view',
         ),
         'referenceable_types' => array(
-          'bof_session' => 0,
           'event' => 0,
+          'invoice' => 0,
           'news' => 0,
           'page' => 0,
           'product' => 0,
+          'report' => 0,
           'room' => 0,
           'schedule_item' => 0,
           'session' => 0,
           'sponsor' => 0,
           'time_slot' => 'time_slot',
+          'webform' => 0,
         ),
         'view' => array(
-          'args' => array(
-            0 => '',
-          ),
-          'display_name' => 'default',
-          'view_name' => '--',
+          'args' => array(),
+          'display_name' => '',
+          'view_name' => '',
         ),
       ),
       'translatable' => '0',
@@ -1781,11 +1793,7 @@ function dco_session_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'session',
-      'default_value' => array(
-        0 => array(
-          'nid' => '',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1841,19 +1849,15 @@ function dco_session_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_session_slot',
       'label' => 'Time slot',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'weight' => '-1',
       'widget' => array(
-        'active' => '0',
+        'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'autocomplete_match' => 'contains',
-          'default_value_php' => NULL,
-          'size' => 60,
-        ),
+        'settings' => array(),
         'type' => 'options_select',
         'weight' => '6',
       ),

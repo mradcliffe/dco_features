@@ -12,6 +12,7 @@ function dco_registration_default_rules_configuration() {
   $items['rules_create_account_for_anonymous_registration'] = entity_import('rules_config', '{ "rules_create_account_for_anonymous_registration" : {
       "LABEL" : "Create Account for Anonymous Registration",
       "PLUGIN" : "reaction rule",
+      "WEIGHT" : "6",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules", "commerce", "registration" ],
       "ON" : [ "registration_update", "registration_insert" ],
@@ -23,7 +24,8 @@ function dco_registration_default_rules_configuration() {
             "property" : "mail",
             "value" : [ "registration:anon-mail" ]
           }
-        }
+        },
+        { "NOT data_is" : { "data" : [ "registration:author-uid" ], "value" : "0" } }
       ],
       "DO" : [
         { "entity_create" : {
@@ -46,6 +48,7 @@ function dco_registration_default_rules_configuration() {
   $items['rules_reconcile_registration_accounts'] = entity_import('rules_config', '{ "rules_reconcile_registration_accounts" : {
       "LABEL" : "Reconcile registration accounts",
       "PLUGIN" : "reaction rule",
+      "WEIGHT" : "5",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules", "commerce", "registration" ],
       "ON" : [ "registration_update", "registration_insert" ],

@@ -548,9 +548,10 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['tab_options']['type'] = 'normal';
-  $handler->display->display_options['tab_options']['title'] = 'Registration';
+  $handler->display->display_options['tab_options']['title'] = 'Organizers';
   $handler->display->display_options['tab_options']['description'] = 'Registration for 2012 and newer';
   $handler->display->display_options['tab_options']['weight'] = '0';
+  $handler->display->display_options['tab_options']['name'] = 'management';
 
   /* Display: Meal */
   $handler = $view->new_display('page', 'Meal', 'page_2');
