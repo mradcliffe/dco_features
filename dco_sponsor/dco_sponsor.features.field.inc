@@ -914,6 +914,9 @@ function dco_sponsor_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_sponsorship_level',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -927,7 +930,7 @@ function dco_sponsor_field_default_fields() {
           1 => 'Gold',
           2 => 'Silver',
           3 => 'Bronze',
-          4 => 'Media',
+          4 => 'Host',
         ),
         'allowed_values_function' => '',
         'allowed_values_php' => '',
@@ -943,11 +946,9 @@ function dco_sponsor_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'sponsor',
-      'default_value' => array(
-        0 => array(
-          'value' => '',
-        ),
-      ),
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -990,18 +991,16 @@ function dco_sponsor_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_sponsorship_level',
       'label' => 'Sponsorship Level',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
       'weight' => '5',
       'widget' => array(
-        'active' => '0',
+        'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'default_value_php' => NULL,
-        ),
+        'settings' => array(),
         'type' => 'options_select',
         'weight' => '5',
       ),

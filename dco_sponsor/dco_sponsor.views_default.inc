@@ -22,6 +22,7 @@ function dco_sponsor_views_default_views() {
 
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
+  $handler->display->display_options['title'] = 'Silver Sponsor';
   $handler->display->display_options['items_per_page'] = 0;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -150,6 +151,8 @@ function dco_sponsor_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = 0;
+  $handler->display->display_options['row_options']['default_field_elements'] = 0;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
@@ -163,6 +166,15 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
 ';
   $handler->display->display_options['header']['area']['format'] = '1';
   $handler->display->display_options['header']['area']['tokenize'] = 0;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: View area */
+  $handler->display->display_options['footer']['view']['id'] = 'view';
+  $handler->display->display_options['footer']['view']['table'] = 'views';
+  $handler->display->display_options['footer']['view']['field'] = 'view';
+  $handler->display->display_options['footer']['view']['label'] = 'Individual Sponsors';
+  $handler->display->display_options['footer']['view']['empty'] = FALSE;
+  $handler->display->display_options['footer']['view']['view_to_insert'] = 'attendees:block_2';
+  $handler->display->display_options['footer']['view']['inherit_arguments'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -248,6 +260,10 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['sorts']['field_sponsorship_level_value']['id'] = 'field_sponsorship_level_value';
   $handler->display->display_options['sorts']['field_sponsorship_level_value']['table'] = 'field_data_field_sponsorship_level';
   $handler->display->display_options['sorts']['field_sponsorship_level_value']['field'] = 'field_sponsorship_level_value';
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['path'] = 'sponsors';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Sponsors';
@@ -309,6 +325,7 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   /* Display: Platinum */
   $handler = $view->new_display('block', 'Platinum', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Platinum Sponsor';
   $handler->display->display_options['display_description'] = 'Ordered Platinum Sponsors';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -423,7 +440,13 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
 
   /* Display: Gold */
   $handler = $view->new_display('block', 'Gold', 'block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Gold Sponsor';
   $handler->display->display_options['display_description'] = 'Ordered Gold Sponsors';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -504,6 +527,11 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['fields']['field_sponsorship_level']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_sponsorship_level']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_sponsorship_level']['field_api_classes'] = 0;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
@@ -605,6 +633,8 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
 
   /* Display: University */
   $handler = $view->new_display('block', 'University', 'block_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Host Sponsor';
   $handler->display->display_options['display_description'] = 'Ordered University Sponsors';
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */

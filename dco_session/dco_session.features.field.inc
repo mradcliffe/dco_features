@@ -529,7 +529,7 @@ function dco_session_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => 0,
+        'weight' => '5',
       ),
     ),
   );
@@ -657,9 +657,95 @@ function dco_session_field_default_fields() {
           'default_value_php' => NULL,
         ),
         'type' => 'options_buttons',
-        'weight' => '7',
+        'weight' => '2',
       ),
       'widget_type' => 'optionwidgets_buttons',
+    ),
+  );
+
+  // Exported field: 'node-schedule_item-field_event'
+  $fields['node-schedule_item-field_event'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_event',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'nid' => array(
+          'columns' => array(
+            'nid' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'nid' => array(
+          0 => 'nid',
+        ),
+      ),
+      'module' => 'node_reference',
+      'settings' => array(
+        'referenceable_types' => array(
+          'event' => 'event',
+          'invoice' => 0,
+          'news' => 0,
+          'page' => 0,
+          'product' => 0,
+          'report' => 0,
+          'room' => 0,
+          'schedule_item' => 0,
+          'session' => 0,
+          'sponsor' => 0,
+          'time_slot' => 0,
+          'webform' => 0,
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'references_1',
+          'view_name' => 'latest_event',
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'node_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'schedule_item',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'node_reference',
+          'settings' => array(),
+          'type' => 'node_reference_default',
+          'weight' => 4,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_event',
+      'label' => 'Event',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '1',
+      ),
     ),
   );
 
@@ -794,7 +880,7 @@ function dco_session_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'options_buttons',
-        'weight' => '9',
+        'weight' => '4',
       ),
       'widget_type' => 'nodereference_buttons',
     ),
@@ -931,7 +1017,7 @@ function dco_session_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'options_select',
-        'weight' => '8',
+        'weight' => '3',
       ),
       'widget_type' => 'nodereference_select',
     ),

@@ -14,7 +14,7 @@ function dco_registration_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "WEIGHT" : "6",
       "TAGS" : [ "dco" ],
-      "REQUIRES" : [ "rules", "commerce", "registration" ],
+      "REQUIRES" : [ "rules", "commerce", "commerce_checkout", "registration" ],
       "ON" : [ "registration_update", "registration_insert" ],
       "IF" : [
         { "data_is" : { "data" : [ "registration:state:name" ], "value" : "complete" } },
@@ -24,8 +24,7 @@ function dco_registration_default_rules_configuration() {
             "property" : "mail",
             "value" : [ "registration:anon-mail" ]
           }
-        },
-        { "NOT data_is" : { "data" : [ "registration:author-uid" ], "value" : "0" } }
+        }
       ],
       "DO" : [
         { "entity_create" : {
@@ -39,16 +38,21 @@ function dco_registration_default_rules_configuration() {
         },
         { "user_unblock" : { "account" : [ "new-account" ] } },
         { "entity_save" : { "data" : [ "new-account" ], "immediate" : 1 } },
-        { "data_set" : { "data" : [ "registration:mail" ] } },
         { "data_set" : { "data" : [ "registration:user" ], "value" : [ "new-account" ] } },
-        { "entity_save" : { "data" : [ "registration" ] } }
+        { "data_set" : { "data" : [ "registration:anon-mail" ] } },
+        { "entity_save" : { "data" : [ "registration" ] } },
+        { "send_account_email" : {
+            "account" : [ "new-account" ],
+            "email_type" : "register_no_approval_required"
+          }
+        }
       ]
     }
   }');
   $items['rules_reconcile_registration_accounts'] = entity_import('rules_config', '{ "rules_reconcile_registration_accounts" : {
       "LABEL" : "Reconcile registration accounts",
       "PLUGIN" : "reaction rule",
-      "WEIGHT" : "5",
+      "WEIGHT" : "6",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules", "commerce", "registration" ],
       "ON" : [ "registration_update", "registration_insert" ],
@@ -73,7 +77,7 @@ function dco_registration_default_rules_configuration() {
             "PROVIDE" : { "entity_fetched" : { "existing_account" : "Existing account" } }
           }
         },
-        { "data_set" : { "data" : [ "registration:mail" ] } },
+        { "data_set" : { "data" : [ "registration:anon-mail" ] } },
         { "data_set" : { "data" : [ "registration:user" ], "value" : [ "existing-account:0" ] } },
         { "entity_save" : { "data" : [ "registration" ] } }
       ]

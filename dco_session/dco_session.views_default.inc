@@ -494,14 +494,15 @@ function dco_session_views_default_views() {
     111 => '111',
   );
   $handler->display->display_options['path'] = 'program/sessions/accepted';
-  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Accepted sessions';
   $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'primary-links';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['tab_options']['type'] = 'normal';
   $handler->display->display_options['tab_options']['title'] = 'Sessions';
   $handler->display->display_options['tab_options']['weight'] = '0';
-  $handler->display->display_options['tab_options']['name'] = 'primary-links';
+  $handler->display->display_options['tab_options']['name'] = 'main-menu';
 
   /* Display: Feed: Sessions All */
   $handler = $view->new_display('feed', 'Feed: Sessions All', 'feed_1');
@@ -1029,10 +1030,11 @@ function dco_session_views_default_views() {
     111 => '111',
   );
   $handler->display->display_options['path'] = 'program/sessions/proposed';
-  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Proposed Sessions';
   $handler->display->display_options['menu']['weight'] = '-10';
-  $handler->display->display_options['menu']['name'] = 'primary-links';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['tab_options']['type'] = 'normal';
   $handler->display->display_options['tab_options']['title'] = 'Sessions';
   $handler->display->display_options['tab_options']['weight'] = '0';

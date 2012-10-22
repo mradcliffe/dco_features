@@ -55,24 +55,7 @@ function dco_base_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views-Sponsors-block_3' => array(
-          'module' => 'views',
-          'delta' => 'Sponsors-block_3',
-          'region' => 'footer_first',
-          'weight' => '-10',
-        ),
-        'views-Sponsors-block_2' => array(
-          'module' => 'views',
-          'delta' => 'Sponsors-block_2',
-          'region' => 'footer_first',
-          'weight' => '-10',
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 0;
 
   // Translatables

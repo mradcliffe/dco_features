@@ -12,6 +12,7 @@ function dco_sponsor_default_rules_configuration() {
   $items['rules_add_registration_for_individual_sponsorship'] = entity_import('rules_config', '{ "rules_add_registration_for_individual_sponsorship" : {
       "LABEL" : "Add registration for individual sponsorship",
       "PLUGIN" : "reaction rule",
+      "WEIGHT" : "6",
       "REQUIRES" : [ "commerce_order", "commerce_cart" ],
       "ON" : [ "commerce_cart_product_add" ],
       "IF" : [

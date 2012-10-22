@@ -143,7 +143,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['relationships']['user_uid']['id'] = 'user_uid';
   $handler->display->display_options['relationships']['user_uid']['table'] = 'registration';
   $handler->display->display_options['relationships']['user_uid']['field'] = 'user_uid';
-  $handler->display->display_options['relationships']['user_uid']['required'] = 1;
+  $handler->display->display_options['relationships']['user_uid']['required'] = 0;
   /* Field: Bulk operations: User */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
@@ -508,6 +508,11 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['fields']['created']['empty_zero'] = 0;
   $handler->display->display_options['fields']['created']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   /* Filter criterion: Registration: Meal Preference (field_meal_preference) */
   $handler->display->display_options['filters']['field_meal_preference_value']['id'] = 'field_meal_preference_value';
   $handler->display->display_options['filters']['field_meal_preference_value']['table'] = 'field_data_field_meal_preference';
@@ -990,9 +995,6 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['fields']['field_special_request']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_special_request']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_special_request']['field_api_classes'] = 0;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Registration: Food Allergies (field_allergies) */
   $handler->display->display_options['filters']['field_allergies_value']['id'] = 'field_allergies_value';
@@ -1005,7 +1007,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['field_special_request_value']['table'] = 'field_data_field_special_request';
   $handler->display->display_options['filters']['field_special_request_value']['field'] = 'field_special_request_value';
   $handler->display->display_options['filters']['field_special_request_value']['operator'] = '!=';
-  $handler->display->display_options['filters']['field_special_request_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_special_request_value']['group'] = 2;
   $handler->display->display_options['path'] = 'admin/registration/requests';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Requests';
@@ -1015,6 +1017,79 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['tab_options']['title'] = 'Registration';
   $handler->display->display_options['tab_options']['description'] = 'Registration for 2012 and newer';
   $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Total Registrations */
+  $handler = $view->new_display('block', 'Total Registrations', 'block_1');
+  $handler->display->display_options['display_description'] = 'A quick tally of registrations';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['empty'] = FALSE;
+  $handler->display->display_options['header']['result']['content'] = '<h3><a href="http://drupalcampohio.org/registration" title="Register">Register</a>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Registration: Registration ID */
+  $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
+  $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['group_type'] = 'count';
+  $handler->display->display_options['fields']['registration_id']['label'] = '';
+  $handler->display->display_options['fields']['registration_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['registration_id']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['registration_id']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['registration_id']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['registration_id']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['registration_id']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['registration_id']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['registration_id']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['registration_id']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['registration_id']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['registration_id']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['registration_id']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['registration_id']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['registration_id']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['registration_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['registration_id']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['registration_id']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['registration_id']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['registration_id']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['registration_id']['format_plural'] = 0;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[registration_id] registered and counting!';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'total-registrations';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
   $export['registrations'] = $view;
 
   return $export;
