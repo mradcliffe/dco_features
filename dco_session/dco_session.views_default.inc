@@ -42,12 +42,13 @@ function dco_session_views_default_views() {
     'sort' => 'asc',
   );
   /* No results behavior: Global: Text area */
-  $handler->display->display_options['empty']['text']['id'] = 'area';
+  $handler->display->display_options['empty']['text']['id'] = 'text';
   $handler->display->display_options['empty']['text']['table'] = 'views';
   $handler->display->display_options['empty']['text']['field'] = 'area';
   $handler->display->display_options['empty']['text']['empty'] = FALSE;
-  $handler->display->display_options['empty']['text']['content'] = 'The schedule is empty. Please create one or more rooms and time slots, and assign a session or schedule item to them. For help with scheduling, please see the <a href="http://drupal.org/documentation/build/cod/">COD Documentation</a>.';
+  $handler->display->display_options['empty']['text']['content'] = 'The schedule is currently empty.';
   $handler->display->display_options['empty']['text']['format'] = '1';
+  $handler->display->display_options['empty']['text']['tokenize'] = 0;
   /* Relationship: Content: Time slot (field_session_slot) */
   $handler->display->display_options['relationships']['field_session_slot_nid']['id'] = 'field_session_slot_nid';
   $handler->display->display_options['relationships']['field_session_slot_nid']['table'] = 'field_data_field_session_slot';
@@ -199,6 +200,7 @@ function dco_session_views_default_views() {
   $handler = $view->new_display('page', 'Your schedule', 'page_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Your schedule';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['grouping'] = array(

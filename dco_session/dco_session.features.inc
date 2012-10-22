@@ -43,13 +43,11 @@ function dco_session_flag_default_flags() {
     'unflag_denied_text' => 'You have confirmed that you will be presenting for this session.',
     'link_type' => 'toggle',
     'roles' => array(
-      'flag' => array(
-        0 => 2,
-      ),
+      'flag' => array(),
       'unflag' => array(),
     ),
-    'show_on_page' => 1,
-    'show_on_teaser' => 1,
+    'show_on_page' => 0,
+    'show_on_teaser' => 0,
     'show_on_form' => 0,
     'access_author' => '',
     'i18n' => 0,
