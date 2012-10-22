@@ -53,5 +53,6 @@ features[node][] = room
 features[node][] = schedule_item
 features[node][] = session
 features[node][] = time_slot
+features[views_view][] = cod_schedule
 features[views_view][] = session_votes
 features[views_view][] = sessions
