@@ -50,6 +50,13 @@ function dco_registration_node_info() {
  */
 function dco_registration_default_registration_type() {
   $items = array();
+  $items['free_registration'] = entity_import('registration_type', '{
+    "name" : "free_registration",
+    "label" : "Free Registration",
+    "locked" : "0",
+    "weight" : "0",
+    "data" : null
+  }');
   $items['paid_registration'] = entity_import('registration_type', '{
     "name" : "paid_registration",
     "label" : "Paid Registration",

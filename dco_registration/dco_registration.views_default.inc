@@ -144,6 +144,11 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['relationships']['user_uid']['table'] = 'registration';
   $handler->display->display_options['relationships']['user_uid']['field'] = 'user_uid';
   $handler->display->display_options['relationships']['user_uid']['required'] = 0;
+  /* Relationship: Registration: Registration to Commerce Product */
+  $handler->display->display_options['relationships']['registration_related_commerce_product']['id'] = 'registration_related_commerce_product';
+  $handler->display->display_options['relationships']['registration_related_commerce_product']['table'] = 'registration';
+  $handler->display->display_options['relationships']['registration_related_commerce_product']['field'] = 'registration_related_commerce_product';
+  $handler->display->display_options['relationships']['registration_related_commerce_product']['required'] = 1;
   /* Field: Bulk operations: User */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
@@ -1088,7 +1093,6 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
-  $handler->display->display_options['filter_groups']['operator'] = 'OR';
   $handler->display->display_options['defaults']['filters'] = FALSE;
   $export['registrations'] = $view;
 
