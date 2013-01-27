@@ -10,7 +10,7 @@
 function dco_base_filter_default_formats() {
   $formats = array();
 
-  // Exported format: Full HTML
+  // Exported format: Full HTML.
   $formats['2'] = array(
     'format' => '2',
     'name' => 'Full HTML',

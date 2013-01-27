@@ -10,7 +10,7 @@
 function dco_registration_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'commerce_product-ticket-commerce_price'
+  // Exported field: 'commerce_product-ticket-commerce_price'.
   $fields['commerce_product-ticket-commerce_price'] = array(
     'field_config' => array(
       'active' => '1',
@@ -27,6 +27,7 @@ function dco_registration_field_default_fields() {
           1 => 'currency_code',
         ),
       ),
+      'locked' => '1',
       'module' => 'commerce_price',
       'settings' => array(),
       'translatable' => '0',
@@ -147,7 +148,7 @@ function dco_registration_field_default_fields() {
     ),
   );
 
-  // Exported field: 'commerce_product-ticket-field_registration_type'
+  // Exported field: 'commerce_product-ticket-field_registration_type'.
   $fields['commerce_product-ticket-field_registration_type'] = array(
     'field_config' => array(
       'active' => '1',
@@ -171,6 +172,7 @@ function dco_registration_field_default_fields() {
           0 => 'registration_type',
         ),
       ),
+      'locked' => '0',
       'module' => 'registration',
       'settings' => array(),
       'translatable' => '0',
@@ -242,7 +244,7 @@ function dco_registration_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-body'
+  // Exported field: 'node-event-body'.
   $fields['node-event-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -257,6 +259,7 @@ function dco_registration_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -306,7 +309,7 @@ function dco_registration_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_dates'
+  // Exported field: 'node-event-field_dates'.
   $fields['node-event-field_dates'] = array(
     'field_config' => array(
       'active' => '1',
@@ -316,6 +319,7 @@ function dco_registration_field_default_fields() {
       'field_name' => 'field_dates',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'field_permissions' => array(
@@ -430,7 +434,7 @@ function dco_registration_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_image_cache'
+  // Exported field: 'node-event-field_image_cache'.
   $fields['node-event-field_image_cache'] = array(
     'field_config' => array(
       'active' => '1',
@@ -451,6 +455,7 @@ function dco_registration_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => NULL,
@@ -529,7 +534,7 @@ function dco_registration_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_product_reference'
+  // Exported field: 'node-event-field_product_reference'.
   $fields['node-event-field_product_reference'] = array(
     'field_config' => array(
       'active' => '1',
@@ -553,6 +558,7 @@ function dco_registration_field_default_fields() {
           0 => 'product_id',
         ),
       ),
+      'locked' => '0',
       'module' => 'commerce_product_reference',
       'settings' => array(),
       'translatable' => '0',
@@ -615,7 +621,7 @@ function dco_registration_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-session-field_registration_type'
+  // Exported field: 'node-session-field_registration_type'.
   $fields['node-session-field_registration_type'] = array(
     'field_config' => array(
       'active' => '1',
@@ -639,6 +645,7 @@ function dco_registration_field_default_fields() {
           0 => 'registration_type',
         ),
       ),
+      'locked' => '0',
       'module' => 'registration',
       'settings' => array(),
       'translatable' => '0',
@@ -646,11 +653,7 @@ function dco_registration_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'session',
-      'default_value' => array(
-        0 => array(
-          'registration_type' => '',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -659,7 +662,7 @@ function dco_registration_field_default_fields() {
           'module' => 'registration',
           'settings' => array(),
           'type' => 'registration_form',
-          'weight' => '5',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -699,12 +702,12 @@ function dco_registration_field_default_fields() {
         'module' => 'registration',
         'settings' => array(),
         'type' => 'registration_select',
-        'weight' => '13',
+        'weight' => '14',
       ),
     ),
   );
 
-  // Exported field: 'registration-paid_registration-field_allergies'
+  // Exported field: 'registration-paid_registration-field_allergies'.
   $fields['registration-paid_registration-field_allergies'] = array(
     'field_config' => array(
       'active' => '1',
@@ -728,6 +731,7 @@ function dco_registration_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -775,7 +779,77 @@ function dco_registration_field_default_fields() {
     ),
   );
 
-  // Exported field: 'registration-paid_registration-field_meal_preference'
+  // Exported field: 'registration-paid_registration-field_attendance'.
+  $fields['registration-paid_registration-field_attendance'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_attendance',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'attended' => 'Attended',
+          'noshow' => ' No Show',
+          'cancelled' => ' Cancelled',
+        ),
+        'allowed_values_function' => '',
+        'allowed_values_php' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'paid_registration',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 12,
+        ),
+        'review_pane' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_attendance',
+      'label' => 'Attendance',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '31',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-paid_registration-field_meal_preference'.
   $fields['registration-paid_registration-field_meal_preference'] = array(
     'field_config' => array(
       'active' => '1',
@@ -792,6 +866,7 @@ function dco_registration_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -849,7 +924,7 @@ function dco_registration_field_default_fields() {
     ),
   );
 
-  // Exported field: 'registration-paid_registration-field_special_request'
+  // Exported field: 'registration-paid_registration-field_special_request'.
   $fields['registration-paid_registration-field_special_request'] = array(
     'field_config' => array(
       'active' => '1',
@@ -873,6 +948,7 @@ function dco_registration_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -920,7 +996,7 @@ function dco_registration_field_default_fields() {
     ),
   );
 
-  // Exported field: 'registration-paid_registration-field_tshirt_size'
+  // Exported field: 'registration-paid_registration-field_tshirt_size'.
   $fields['registration-paid_registration-field_tshirt_size'] = array(
     'field_config' => array(
       'active' => '1',
@@ -937,6 +1013,7 @@ function dco_registration_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -994,6 +1071,7 @@ function dco_registration_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Attendance');
   t('Body');
   t('Dates');
   t('Do you have a special need, ie Sight Impaired, Wheel Chair Access, etc...');

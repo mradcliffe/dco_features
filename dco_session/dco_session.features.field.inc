@@ -10,7 +10,7 @@
 function dco_session_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-room-body'
+  // Exported field: 'node-room-body'.
   $fields['node-room-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -25,6 +25,7 @@ function dco_session_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -75,7 +76,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-room-field_room_capacity'
+  // Exported field: 'node-room-field_room_capacity'.
   $fields['node-room-field_room_capacity'] = array(
     'field_config' => array(
       'active' => '1',
@@ -96,6 +97,7 @@ function dco_session_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'allowed_values' => '',
@@ -192,7 +194,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-room-field_room_photo'
+  // Exported field: 'node-room-field_room_photo'.
   $fields['node-room-field_room_photo'] = array(
     'field_config' => array(
       'active' => '1',
@@ -213,6 +215,7 @@ function dco_session_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => NULL,
@@ -333,7 +336,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-room-field_room_session_capacity'
+  // Exported field: 'node-room-field_room_session_capacity'.
   $fields['node-room-field_room_session_capacity'] = array(
     'field_config' => array(
       'active' => '1',
@@ -343,6 +346,7 @@ function dco_session_field_default_fields() {
       'field_name' => 'field_room_session_capacity',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'number',
       'settings' => array(
         'allowed_values' => array(),
@@ -469,7 +473,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-schedule_item-body'
+  // Exported field: 'node-schedule_item-body'.
   $fields['node-schedule_item-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -484,6 +488,7 @@ function dco_session_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -500,7 +505,7 @@ function dco_session_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -534,7 +539,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-schedule_item-field_accepted'
+  // Exported field: 'node-schedule_item-field_accepted'.
   $fields['node-schedule_item-field_accepted'] = array(
     'field_config' => array(
       'active' => '1',
@@ -551,6 +556,7 @@ function dco_session_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -584,10 +590,9 @@ function dco_session_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => '0',
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'inline',
@@ -663,7 +668,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-schedule_item-field_event'
+  // Exported field: 'node-schedule_item-field_event'.
   $fields['node-schedule_item-field_event'] = array(
     'field_config' => array(
       'active' => '1',
@@ -687,6 +692,7 @@ function dco_session_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
@@ -720,10 +726,9 @@ function dco_session_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'node_reference',
           'settings' => array(),
-          'type' => 'node_reference_default',
-          'weight' => 4,
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -749,7 +754,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-schedule_item-field_session_room'
+  // Exported field: 'node-schedule_item-field_session_room'.
   $fields['node-schedule_item-field_session_room'] = array(
     'field_config' => array(
       'active' => '1',
@@ -773,6 +778,7 @@ function dco_session_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'field_permissions' => array(
@@ -818,7 +824,7 @@ function dco_session_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'full' => array(
           'label' => 'above',
@@ -886,11 +892,11 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-schedule_item-field_session_slot'
+  // Exported field: 'node-schedule_item-field_session_slot'.
   $fields['node-schedule_item-field_session_slot'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_session_slot',
@@ -910,6 +916,7 @@ function dco_session_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'field_permissions' => array(
@@ -942,20 +949,16 @@ function dco_session_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'schedule_item',
-      'default_value' => array(
-        0 => array(
-          'nid' => '',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
+          'label' => 'above',
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => '1',
+          'weight' => '0',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1003,19 +1006,15 @@ function dco_session_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_session_slot',
       'label' => 'Time slot',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'weight' => '8',
       'widget' => array(
-        'active' => '0',
+        'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'autocomplete_match' => 'contains',
-          'default_value_php' => NULL,
-          'size' => 60,
-        ),
+        'settings' => array(),
         'type' => 'options_select',
         'weight' => '3',
       ),
@@ -1023,7 +1022,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-session-body'
+  // Exported field: 'node-session-body'.
   $fields['node-session-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1038,6 +1037,7 @@ function dco_session_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -1054,7 +1054,7 @@ function dco_session_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -1087,7 +1087,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-session-field_accepted'
+  // Exported field: 'node-session-field_accepted'.
   $fields['node-session-field_accepted'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1104,6 +1104,7 @@ function dco_session_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -1199,13 +1200,13 @@ function dco_session_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '11',
       ),
       'widget_type' => 'optionwidgets_buttons',
     ),
   );
 
-  // Exported field: 'node-session-field_event'
+  // Exported field: 'node-session-field_event'.
   $fields['node-session-field_event'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1229,6 +1230,7 @@ function dco_session_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
@@ -1294,7 +1296,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-session-field_experience'
+  // Exported field: 'node-session-field_experience'.
   $fields['node-session-field_experience'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1308,6 +1310,7 @@ function dco_session_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -1342,7 +1345,7 @@ function dco_session_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1409,7 +1412,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-session-field_featured'
+  // Exported field: 'node-session-field_featured'.
   $fields['node-session-field_featured'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1426,6 +1429,7 @@ function dco_session_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -1463,7 +1467,7 @@ function dco_session_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '11',
+          'weight' => '12',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1551,13 +1555,13 @@ function dco_session_field_default_fields() {
           'display_label' => 0,
         ),
         'type' => 'options_onoff',
-        'weight' => '11',
+        'weight' => '12',
       ),
       'widget_type' => 'optionwidgets_onoff',
     ),
   );
 
-  // Exported field: 'node-session-field_marketing_image'
+  // Exported field: 'node-session-field_marketing_image'.
   $fields['node-session-field_marketing_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1581,6 +1585,7 @@ function dco_session_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -1696,7 +1701,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-session-field_session_room'
+  // Exported field: 'node-session-field_session_room'.
   $fields['node-session-field_session_room'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1720,6 +1725,7 @@ function dco_session_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'field_permissions' => array(
@@ -1761,7 +1767,7 @@ function dco_session_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => '1',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1818,17 +1824,17 @@ function dco_session_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '9',
+        'weight' => '10',
       ),
       'widget_type' => 'nodereference_buttons',
     ),
   );
 
-  // Exported field: 'node-session-field_session_slot'
+  // Exported field: 'node-session-field_session_slot'.
   $fields['node-session-field_session_slot'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_session_slot',
@@ -1848,6 +1854,7 @@ function dco_session_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'field_permissions' => array(
@@ -1885,11 +1892,10 @@ function dco_session_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
-          'module' => 'node_reference',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'node_reference_default',
-          'weight' => '2',
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1952,7 +1958,93 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-session-field_slides'
+  // Exported field: 'node-session-field_session_video_url'.
+  $fields['node-session-field_session_video_url'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_session_video_url',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'link',
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'rel' => '',
+          'target' => 'default',
+        ),
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => 128,
+        'title_value' => '',
+        'url' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'link_field',
+    ),
+    'field_instance' => array(
+      'bundle' => 'session',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => '13',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_session_video_url',
+      'label' => 'Session Video URL',
+      'required' => 0,
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'configurable_title' => 0,
+          'rel' => '',
+          'target' => '_blank',
+          'title' => '',
+        ),
+        'display' => array(
+          'url_cutoff' => '80',
+        ),
+        'enable_tokens' => 1,
+        'title' => 'value',
+        'title_maxlength' => '128',
+        'title_value' => 'Session video',
+        'url' => 0,
+        'user_register_form' => FALSE,
+        'validate_url' => 1,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_field',
+        'weight' => '9',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-session-field_slides'.
   $fields['node-session-field_slides'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1973,6 +2065,7 @@ function dco_session_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'description_field' => '0',
@@ -1999,7 +2092,7 @@ function dco_session_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'full' => array(
           'label' => 'above',
@@ -2068,7 +2161,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-session-field_speakers'
+  // Exported field: 'node-session-field_speakers'.
   $fields['node-session-field_speakers'] = array(
     'field_config' => array(
       'active' => '1',
@@ -2092,6 +2185,7 @@ function dco_session_field_default_fields() {
           0 => 'uid',
         ),
       ),
+      'locked' => '0',
       'module' => 'user_reference',
       'settings' => array(
         'field_permissions' => array(
@@ -2227,7 +2321,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-session-field_track'
+  // Exported field: 'node-session-field_track'.
   $fields['node-session-field_track'] = array(
     'field_config' => array(
       'active' => '1',
@@ -2235,12 +2329,16 @@ function dco_session_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_track',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -2262,11 +2360,9 @@ function dco_session_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'session',
-      'default_value' => array(
-        0 => array(
-          'value' => '',
-        ),
-      ),
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'default_value_php' => '',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -2307,18 +2403,16 @@ function dco_session_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_track',
       'label' => 'Track',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
       'weight' => '-3',
       'widget' => array(
-        'active' => '0',
+        'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'default_value_php' => NULL,
-        ),
+        'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '3',
       ),
@@ -2326,7 +2420,7 @@ function dco_session_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-time_slot-field_slot_datetime'
+  // Exported field: 'node-time_slot-field_slot_datetime'.
   $fields['node-time_slot-field_slot_datetime'] = array(
     'field_config' => array(
       'active' => '1',
@@ -2336,6 +2430,7 @@ function dco_session_field_default_fields() {
       'field_name' => 'field_slot_datetime',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'field_permissions' => array(
@@ -2513,6 +2608,7 @@ function dco_session_field_default_fields() {
   t('Room');
   t('Rooms provide a location for each session.');
   t('Select room(s) in which the session occurs.');
+  t('Session Video URL');
   t('Session capacity');
   t('Slides');
   t('Speaker(s)');

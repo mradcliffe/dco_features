@@ -15,7 +15,6 @@ function dco_sponsor_commerce_product_default_types() {
       'description' => 'A basic product type.',
       'help' => '',
       'revision' => '1',
-      'module' => 'commerce_product_ui',
     ),
   );
   return $items;

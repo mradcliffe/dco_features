@@ -15,7 +15,6 @@ function dco_registration_commerce_product_default_types() {
       'description' => 'A registration or ticket for an event.',
       'help' => '',
       'revision' => '1',
-      'module' => 'commerce_product_ui',
     ),
   );
   return $items;

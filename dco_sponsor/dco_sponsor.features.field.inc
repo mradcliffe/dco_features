@@ -10,7 +10,7 @@
 function dco_sponsor_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'commerce_product-product-commerce_price'
+  // Exported field: 'commerce_product-product-commerce_price'.
   $fields['commerce_product-product-commerce_price'] = array(
     'field_config' => array(
       'active' => '1',
@@ -27,6 +27,7 @@ function dco_sponsor_field_default_fields() {
           1 => 'currency_code',
         ),
       ),
+      'locked' => '1',
       'module' => 'commerce_price',
       'settings' => array(),
       'translatable' => '0',
@@ -111,7 +112,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'commerce_product-product-commerce_stock'
+  // Exported field: 'commerce_product-product-commerce_stock'.
   $fields['commerce_product-product-commerce_stock'] = array(
     'field_config' => array(
       'active' => '1',
@@ -123,6 +124,7 @@ function dco_sponsor_field_default_fields() {
       'field_name' => 'commerce_stock',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'number',
       'settings' => array(),
       'translatable' => '0',
@@ -183,7 +185,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'commerce_product-product-commerce_stock_override'
+  // Exported field: 'commerce_product-product-commerce_stock_override'.
   $fields['commerce_product-product-commerce_stock_override'] = array(
     'field_config' => array(
       'active' => '1',
@@ -199,6 +201,7 @@ function dco_sponsor_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -258,7 +261,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-product-body'
+  // Exported field: 'node-product-body'.
   $fields['node-product-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -273,6 +276,7 @@ function dco_sponsor_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -322,7 +326,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-product-field_image_cache'
+  // Exported field: 'node-product-field_image_cache'.
   $fields['node-product-field_image_cache'] = array(
     'field_config' => array(
       'active' => '1',
@@ -343,6 +347,7 @@ function dco_sponsor_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => NULL,
@@ -429,7 +434,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-product-field_product_reference'
+  // Exported field: 'node-product-field_product_reference'.
   $fields['node-product-field_product_reference'] = array(
     'field_config' => array(
       'active' => '1',
@@ -453,6 +458,7 @@ function dco_sponsor_field_default_fields() {
           0 => 'product_id',
         ),
       ),
+      'locked' => '0',
       'module' => 'commerce_product_reference',
       'settings' => array(),
       'translatable' => '0',
@@ -514,7 +520,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-sponsor-body'
+  // Exported field: 'node-sponsor-body'.
   $fields['node-sponsor-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -529,6 +535,7 @@ function dco_sponsor_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -579,7 +586,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-sponsor-field_event'
+  // Exported field: 'node-sponsor-field_event'.
   $fields['node-sponsor-field_event'] = array(
     'field_config' => array(
       'active' => '1',
@@ -603,6 +610,7 @@ function dco_sponsor_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
@@ -668,7 +676,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-sponsor-field_logo'
+  // Exported field: 'node-sponsor-field_logo'.
   $fields['node-sponsor-field_logo'] = array(
     'field_config' => array(
       'active' => '1',
@@ -689,6 +697,7 @@ function dco_sponsor_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => NULL,
@@ -793,7 +802,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-sponsor-field_related_attendees'
+  // Exported field: 'node-sponsor-field_related_attendees'.
   $fields['node-sponsor-field_related_attendees'] = array(
     'field_config' => array(
       'active' => '1',
@@ -814,6 +823,7 @@ function dco_sponsor_field_default_fields() {
           0 => 'uid',
         ),
       ),
+      'locked' => '0',
       'module' => 'user_reference',
       'settings' => array(
         'field_permissions' => array(
@@ -906,7 +916,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-sponsor-field_sponsorship_level'
+  // Exported field: 'node-sponsor-field_sponsorship_level'.
   $fields['node-sponsor-field_sponsorship_level'] = array(
     'field_config' => array(
       'active' => '1',
@@ -923,6 +933,7 @@ function dco_sponsor_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -1008,7 +1019,7 @@ function dco_sponsor_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-sponsor-field_url'
+  // Exported field: 'node-sponsor-field_url'.
   $fields['node-sponsor-field_url'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1018,6 +1029,7 @@ function dco_sponsor_field_default_fields() {
       'field_name' => 'field_url',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(

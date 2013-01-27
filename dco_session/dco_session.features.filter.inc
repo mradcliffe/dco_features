@@ -10,7 +10,7 @@
 function dco_session_filter_default_formats() {
   $formats = array();
 
-  // Exported format: Filtered HTML
+  // Exported format: Filtered HTML.
   $formats['1'] = array(
     'format' => '1',
     'name' => 'Filtered HTML',

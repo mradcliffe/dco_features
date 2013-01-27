@@ -10,7 +10,7 @@
 function dco_base_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-news-body'
+  // Exported field: 'node-news-body'.
   $fields['node-news-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -25,6 +25,7 @@ function dco_base_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -70,12 +71,12 @@ function dco_base_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
   );
 
-  // Exported field: 'node-webform-body'
+  // Exported field: 'node-webform-body'.
   $fields['node-webform-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -90,6 +91,7 @@ function dco_base_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -140,7 +142,7 @@ function dco_base_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-webform-field_event'
+  // Exported field: 'node-webform-field_event'.
   $fields['node-webform-field_event'] = array(
     'field_config' => array(
       'active' => '1',
@@ -164,6 +166,7 @@ function dco_base_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(

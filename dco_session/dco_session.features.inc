@@ -63,8 +63,8 @@ function dco_session_flag_default_flags() {
     'title' => 'Session Attending',
     'global' => '0',
     'types' => array(
-      0 => 'schedule_item',
-      1 => 'session',
+      0 => 'session',
+      1 => 'schedule_item',
     ),
     'flag_short' => 'Add to your schedule',
     'flag_long' => 'Add this session to your personal session attendance.',

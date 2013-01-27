@@ -10,7 +10,7 @@
 function dco_base_views_default_views() {
   $export = array();
 
-  $view = new view;
+  $view = new view();
   $view->name = 'news';
   $view->description = '';
   $view->tag = 'cod news';
@@ -23,21 +23,18 @@ function dco_base_views_default_views() {
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->display->display_options['title'] = 'News';
+  $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = 1;
-  $handler->display->display_options['row_options']['comments'] = 0;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['text']['id'] = 'area';
   $handler->display->display_options['empty']['text']['table'] = 'views';
   $handler->display->display_options['empty']['text']['field'] = 'area';
-  $handler->display->display_options['empty']['text']['empty'] = FALSE;
   $handler->display->display_options['empty']['text']['content'] = 'No news items have been published.';
   $handler->display->display_options['empty']['text']['format'] = '1';
   /* Field: Content: Title */
@@ -45,58 +42,25 @@ function dco_base_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
-  $handler->display->display_options['fields']['created']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['created']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['created']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['created']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['created']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['created']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['created']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['created']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['created']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['created']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['created']['alter']['ellipsis'] = FALSE;
   /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['teaser']['id'] = 'teaser';
   $handler->display->display_options['fields']['teaser']['table'] = 'node_revision';
   $handler->display->display_options['fields']['teaser']['field'] = 'teaser';
   $handler->display->display_options['fields']['teaser']['label'] = '';
-  $handler->display->display_options['fields']['teaser']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['teaser']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['teaser']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['teaser']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['teaser']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['teaser']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['teaser']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['teaser']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['teaser']['empty_zero'] = 0;
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['label'] = '';
-  $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['comment_count']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['comment_count']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['comment_count']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['comment_count']['empty_zero'] = 0;
   $handler->display->display_options['fields']['comment_count']['prefix'] = 'Comments: ';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -127,6 +91,7 @@ function dco_base_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'blog';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Blog';
@@ -136,8 +101,13 @@ function dco_base_views_default_views() {
 
   /* Display: Single news item block */
   $handler = $view->new_display('block', 'Single news item block', 'block_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -145,8 +115,13 @@ function dco_base_views_default_views() {
 
   /* Display: Multi news item block */
   $handler = $view->new_display('block', 'Multi news item block', 'block_2');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'Blog archive';
   $export['news'] = $view;
 
