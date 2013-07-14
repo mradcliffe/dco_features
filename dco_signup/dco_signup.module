@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the DCO Signup feature.
- */
-
-include_once 'dco_signup.features.inc';
