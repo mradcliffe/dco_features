@@ -43,6 +43,21 @@ function dco_registration_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_reconcile_user_account_to_registration'] = entity_import('rules_config', '{ "rules_reconcile_user_account_to_registration" : {
+      "LABEL" : "Reconcile user account to registration",
+      "PLUGIN" : "action set",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "registration" : { "label" : "Registration", "type" : "registration" },
+        "user" : { "label" : "User Account", "type" : "user" }
+      },
+      "ACTION SET" : [
+        { "data_set" : { "data" : [ "registration:anon-mail" ] } },
+        { "data_set" : { "data" : [ "registration:user" ], "value" : [ "user" ] } },
+        { "entity_save" : { "data" : [ "registration" ], "immediate" : 1 } }
+      ]
+    }
+  }');
   $items['rules_create_account_for_anonymous_registration'] = entity_import('rules_config', '{ "rules_create_account_for_anonymous_registration" : {
       "LABEL" : "Create Account for Anonymous Registration",
       "PLUGIN" : "reaction rule",
@@ -145,21 +160,6 @@ function dco_registration_default_rules_configuration() {
       "ACTION SET" : [
         { "data_set" : { "data" : [ "registration:author" ], "value" : [ "order:owner" ] } },
         { "entity_save" : { "data" : [ "registration" ] } }
-      ]
-    }
-  }');
-  $items['rules_reconcile_user_account_to_registration'] = entity_import('rules_config', '{ "rules_reconcile_user_account_to_registration" : {
-      "LABEL" : "Reconcile user account to registration",
-      "PLUGIN" : "action set",
-      "REQUIRES" : [ "rules" ],
-      "USES VARIABLES" : {
-        "registration" : { "label" : "Registration", "type" : "registration" },
-        "user" : { "label" : "User Account", "type" : "user" }
-      },
-      "ACTION SET" : [
-        { "data_set" : { "data" : [ "registration:anon-mail" ] } },
-        { "data_set" : { "data" : [ "registration:user" ], "value" : [ "user" ] } },
-        { "entity_save" : { "data" : [ "registration" ], "immediate" : 1 } }
       ]
     }
   }');
