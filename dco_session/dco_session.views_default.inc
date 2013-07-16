@@ -51,7 +51,10 @@ function dco_session_views_default_views() {
   $handler->display->display_options['empty']['text']['id'] = 'text';
   $handler->display->display_options['empty']['text']['table'] = 'views';
   $handler->display->display_options['empty']['text']['field'] = 'area';
-  $handler->display->display_options['empty']['text']['content'] = 'The schedule is currently empty.';
+  $handler->display->display_options['empty']['text']['empty'] = TRUE;
+  $handler->display->display_options['empty']['text']['content'] = 'The schedule is currently empty.
+
+<a href="/node/add/session">Submit a session</a> for DrupalCamp Ohio 2013!';
   $handler->display->display_options['empty']['text']['format'] = '1';
   /* Relationship: Content: Time slot (field_session_slot) */
   $handler->display->display_options['relationships']['field_session_slot_nid']['id'] = 'field_session_slot_nid';
@@ -161,7 +164,6 @@ function dco_session_views_default_views() {
 
   /* Display: Schedule */
   $handler = $view->new_display('page', 'Schedule', 'page_1');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -206,7 +208,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    111 => '111',
+    226 => '226',
   );
   /* Filter criterion: Content: Date and time -  start date (field_slot_datetime) */
   $handler->display->display_options['filters']['field_slot_datetime_value']['id'] = 'field_slot_datetime_value';
@@ -234,7 +236,6 @@ function dco_session_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Your schedule';
   $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['grouping'] = array(
@@ -350,7 +351,6 @@ function dco_session_views_default_views() {
 
   /* Display: Saturday */
   $handler = $view->new_display('page', 'Saturday', 'page_3');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['defaults']['cache'] = FALSE;
@@ -399,7 +399,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    111 => '111',
+    226 => '226',
   );
   /* Filter criterion: Content: Date and time -  start date (field_slot_datetime) */
   $handler->display->display_options['filters']['field_slot_datetime_value']['id'] = 'field_slot_datetime_value';
@@ -556,12 +556,11 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    111 => '111',
+    226 => '226',
   );
 
   /* Display: Totals */
   $handler = $view->new_display('page', 'Totals', 'page_1');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'admin/registration/session-preferences';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Sessions';
@@ -710,7 +709,6 @@ function dco_session_views_default_views() {
   $handler = $view->new_display('page', 'Page: Accepted', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Accepted sessions';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['text']['id'] = 'area';
@@ -786,7 +784,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    111 => '111',
+    226 => '226',
   );
   /* Filter criterion: Content: Status (field_accepted) */
   $handler->display->display_options['filters']['field_accepted_value']['id'] = 'field_accepted_value';
@@ -808,7 +806,6 @@ function dco_session_views_default_views() {
 
   /* Display: Feed: Sessions All */
   $handler = $view->new_display('feed', 'Feed: Sessions All', 'feed_1');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
@@ -836,7 +833,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    111 => '111',
+    226 => '226',
   );
   $handler->display->display_options['path'] = 'program/sessions/proposed/rss';
   $handler->display->display_options['displays'] = array(
@@ -852,7 +849,6 @@ function dco_session_views_default_views() {
   $handler->display->display_options['title'] = 'Sessions Details';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'session-details';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['field_session_slot_nid']['id'] = 'field_session_slot_nid';
@@ -900,7 +896,6 @@ function dco_session_views_default_views() {
   $handler->display->display_options['title'] = 'Speakers';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'session-speakers';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['items_per_page'] = 0;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'grid';
@@ -1002,7 +997,6 @@ function dco_session_views_default_views() {
   $handler = $view->new_display('page', 'Page: Proposed', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Proposed Sessions';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = '';
@@ -1137,7 +1131,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    111 => '111',
+    226 => '226',
   );
   /* Filter criterion: Content: Status (field_accepted) */
   $handler->display->display_options['filters']['field_accepted_value']['id'] = 'field_accepted_value';
@@ -1163,7 +1157,6 @@ function dco_session_views_default_views() {
   $handler = $view->new_display('block', 'Block: Nodequeue', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Sessions';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
@@ -1206,7 +1199,6 @@ function dco_session_views_default_views() {
   $handler = $view->new_display('block', 'Block: Featured', 'block_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Sessions';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'slideshow';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -1272,13 +1264,12 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    111 => '111',
+    226 => '226',
   );
 
   /* Display: Block: Rooms */
   $handler = $view->new_display('block', 'Block: Rooms', 'block_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -1386,7 +1377,6 @@ function dco_session_views_default_views() {
   /* Display: Block: Timeslots */
   $handler = $view->new_display('block', 'Block: Timeslots', 'block_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -1490,7 +1480,6 @@ function dco_session_views_default_views() {
   $handler = $view->new_display('page', 'Page: Archived', 'page_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Archived Sessions';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '25';

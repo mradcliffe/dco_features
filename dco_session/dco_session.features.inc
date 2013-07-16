@@ -12,6 +12,10 @@ function dco_session_ctools_plugin_api() {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
+  list($module, $api) = func_get_args();
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
 }
 
 /**
@@ -46,10 +50,12 @@ function dco_session_flag_default_flags() {
       'flag' => array(),
       'unflag' => array(),
     ),
-    'show_on_page' => 0,
-    'show_on_teaser' => 0,
+    'weight' => 0,
     'show_on_form' => 0,
     'access_author' => '',
+    'show_on_page' => 0,
+    'show_on_teaser' => 0,
+    'show_contextual_link' => FALSE,
     'i18n' => 0,
     'module' => 'dco_session',
     'locked' => array(
@@ -78,10 +84,12 @@ function dco_session_flag_default_flags() {
       'flag' => array(),
       'unflag' => array(),
     ),
-    'show_on_page' => 0,
-    'show_on_teaser' => 1,
+    'weight' => 0,
     'show_on_form' => 0,
     'access_author' => '',
+    'show_on_page' => 0,
+    'show_on_teaser' => 1,
+    'show_contextual_link' => FALSE,
     'i18n' => 0,
     'module' => 'dco_session',
     'locked' => array(
@@ -115,10 +123,12 @@ function dco_session_flag_default_flags() {
         1 => 3,
       ),
     ),
-    'show_on_page' => 1,
-    'show_on_teaser' => 0,
+    'weight' => 0,
     'show_on_form' => 0,
     'access_author' => '',
+    'show_on_page' => 1,
+    'show_on_teaser' => 0,
+    'show_contextual_link' => FALSE,
     'i18n' => 0,
     'module' => 'dco_session',
     'locked' => array(
@@ -127,6 +137,7 @@ function dco_session_flag_default_flags() {
     'api_version' => 2,
   );
   return $flags;
+
 }
 
 /**

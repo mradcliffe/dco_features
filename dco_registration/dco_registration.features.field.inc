@@ -191,7 +191,9 @@ function dco_registration_field_default_fields() {
         'default' => array(
           'label' => 'inline',
           'module' => 'registration',
-          'settings' => array(),
+          'settings' => array(
+            'label' => ' ',
+          ),
           'type' => 'registration_default',
           'weight' => '1',
         ),
@@ -560,7 +562,9 @@ function dco_registration_field_default_fields() {
       ),
       'locked' => '0',
       'module' => 'commerce_product_reference',
-      'settings' => array(),
+      'settings' => array(
+        'options_list_limit' => NULL,
+      ),
       'translatable' => '0',
       'type' => 'commerce_product_reference',
     ),
@@ -578,6 +582,7 @@ function dco_registration_field_default_fields() {
             'default_quantity' => 1,
             'line_item_type' => 'product',
             'show_quantity' => FALSE,
+            'show_single_product_attributes' => FALSE,
           ),
           'type' => 'commerce_cart_add_to_cart_form',
           'weight' => '3',
@@ -590,6 +595,7 @@ function dco_registration_field_default_fields() {
             'default_quantity' => 1,
             'line_item_type' => 'product',
             'show_quantity' => FALSE,
+            'show_single_product_attributes' => FALSE,
           ),
           'type' => 'commerce_cart_add_to_cart_form',
           'weight' => '2',
@@ -774,7 +780,7 @@ function dco_registration_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '3',
+        'weight' => '5',
       ),
     ),
   );
@@ -844,7 +850,151 @@ function dco_registration_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '31',
+        'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-paid_registration-field_do_username'.
+  $fields['registration-paid_registration-field_do_username'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_do_username',
+      'field_permissions' => array(
+        'type' => '1',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '100',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'paid_registration',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Please provide the drupal.org user name of the registrant, if any.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 14,
+        ),
+        'review_pane' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_do_username',
+      'label' => 'Drupal user name',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-paid_registration-field_fullname'.
+  $fields['registration-paid_registration-field_fullname'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_fullname',
+      'field_permissions' => array(
+        'type' => '1',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '125',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'paid_registration',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Please provide the full name of the registrant.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 13,
+        ),
+        'review_pane' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_fullname',
+      'label' => 'Full Name',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '1',
       ),
     ),
   );
@@ -919,7 +1069,7 @@ function dco_registration_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '2',
+        'weight' => '4',
       ),
     ),
   );
@@ -991,7 +1141,7 @@ function dco_registration_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '4',
+        'weight' => '6',
       ),
     ),
   );
@@ -1064,7 +1214,7 @@ function dco_registration_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '1',
+        'weight' => '3',
       ),
     ),
   );
@@ -1075,10 +1225,14 @@ function dco_registration_field_default_fields() {
   t('Body');
   t('Dates');
   t('Do you have a special need, ie Sight Impaired, Wheel Chair Access, etc...');
+  t('Drupal user name');
   t('Food Allergies');
   t('Food will be provided at the event.  Are you allergic to any foods?');
+  t('Full Name');
   t('Image');
   t('Meal Preference');
+  t('Please provide the drupal.org user name of the registrant, if any.');
+  t('Please provide the full name of the registrant.');
   t('Please provide your shirt size.');
   t('Please take the time to select a meal preference from the available options. You may change your selection at a later date.');
   t('Price');
