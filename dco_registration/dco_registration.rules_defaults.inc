@@ -139,7 +139,7 @@ function dco_registration_default_rules_configuration() {
         },
         { "component_rules_reconcile_user_account_to_registration" : { "registration" : [ "registration" ], "user" : [ "existing-account:0" ] } },
         { "simplenews_rules_action_subscribe" : {
-            "mail" : [ "existing-account:mail" ],
+            "mail" : [ "existing-account:0:mail" ],
             "tid" : "1",
             "confirmation" : "2",
             "source" : "registration"
