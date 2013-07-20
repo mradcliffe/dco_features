@@ -25,7 +25,7 @@ function dco_sponsor_default_rules_configuration() {
         },
         { "NOT commerce_order_contains_product" : {
             "commerce_order" : [ "commerce_order" ],
-            "product_id" : "dco-2012",
+            "product_id" : "dco-2013",
             "operator" : "\\u003E=",
             "value" : "1"
           }
@@ -35,7 +35,7 @@ function dco_sponsor_default_rules_configuration() {
         { "commerce_cart_product_add_by_sku" : {
             "USING" : {
               "user" : [ "commerce-line-item:order:owner" ],
-              "sku" : "dco-2012",
+              "sku" : "dco-2013",
               "quantity" : "1",
               "combine" : 1
             },
