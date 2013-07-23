@@ -47,6 +47,7 @@ features[node][] = event
 features[registration_type][] = free_registration
 features[registration_type][] = paid_registration
 features[rules_config][] = rules_check_registration_on_new_account
+features[rules_config][] = rules_check_registration_ownership
 features[rules_config][] = rules_create_account_for_anonymous_registration
 features[rules_config][] = rules_reconcile_registration_accounts
 features[rules_config][] = rules_reconcile_registration_owner

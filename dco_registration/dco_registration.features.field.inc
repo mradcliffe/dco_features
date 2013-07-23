@@ -794,7 +794,7 @@ function dco_registration_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_attendance',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(),
       'indexes' => array(
@@ -864,7 +864,7 @@ function dco_registration_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_do_username',
       'field_permissions' => array(
-        'type' => '1',
+        'type' => '0',
       ),
       'foreign keys' => array(
         'format' => array(
@@ -936,7 +936,7 @@ function dco_registration_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_fullname',
       'field_permissions' => array(
-        'type' => '1',
+        'type' => '0',
       ),
       'foreign keys' => array(
         'format' => array(

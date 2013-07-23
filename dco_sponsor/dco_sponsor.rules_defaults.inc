@@ -88,7 +88,7 @@ function dco_sponsor_default_rules_configuration() {
         { "data_calc" : {
             "USING" : {
               "input_1" : [ "total-price-one-less" ],
-              "op" : "\\u002F",
+              "op" : "\\/",
               "input_2" : [ "commerce-line-item:quantity" ]
             },
             "PROVIDE" : { "result" : { "new_unit_price" : "New Unit Price" } }
@@ -99,6 +99,56 @@ function dco_sponsor_default_rules_configuration() {
             "amount" : [ "new-unit-price" ],
             "component_name" : "discount",
             "round_mode" : "1"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_notify_of_sponsor_purchase'] = entity_import('rules_config', '{ "rules_notify_of_sponsor_purchase" : {
+      "LABEL" : "Notify of sponsor purchase",
+      "PLUGIN" : "rule",
+      "TAGS" : [ "dco" ],
+      "REQUIRES" : [ "commerce_order", "rules" ],
+      "USES VARIABLES" : { "order" : { "label" : "Order", "type" : "commerce_order" } },
+      "IF" : [
+        { "OR" : [
+            { "commerce_order_contains_product" : {
+                "commerce_order" : [ "order" ],
+                "product_id" : "bronze-sponsorship",
+                "operator" : "\\u003E=",
+                "value" : "1"
+              }
+            },
+            { "commerce_order_contains_product" : {
+                "commerce_order" : [ "order" ],
+                "product_id" : "gold-sponsorship",
+                "operator" : "\\u003E=",
+                "value" : "1"
+              }
+            },
+            { "commerce_order_contains_product" : {
+                "commerce_order" : [ "order" ],
+                "product_id" : "silver-sponsorship",
+                "operator" : "\\u003E=",
+                "value" : "1"
+              }
+            },
+            { "commerce_order_contains_product" : {
+                "commerce_order" : [ "order" ],
+                "product_id" : "platinum-sponsorship",
+                "operator" : "\\u003E=",
+                "value" : "1"
+              }
+            }
+          ]
+        }
+      ],
+      "DO" : [
+        { "mail_to_users_of_role" : {
+            "roles" : { "value" : { "7" : "7", "6" : "6" } },
+            "subject" : "[site:name] Sponsorship order #[order:order-number] complete",
+            "message" : "A new sponsorship was ordered from [site:name] at [order:admin-url].\\r\\n\\r\\nCustomer: [order:mail-username]\\r\\n\\r\\nLine items:\\r\\n[order:commerce-line-items]\\r\\n\\r\\nNext steps:\\r\\n\\r\\n- Send a note to the volunteer who worked with the sponsor (if any).\\r\\n- Contact the sponsor with logistics:\\r\\n    - Ask for their logo.\\r\\n    - Ask who from their company is coming (see [site:url]\\/sponsor\\/benefits).\\r\\n- Create a sponsor node [site:url]\\/node\\/add\\/sponsor of the appropriate type and add their logo.",
+            "from" : "no-reply@drupalcampohio.org"
           }
         }
       ]

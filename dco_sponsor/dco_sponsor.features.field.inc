@@ -107,7 +107,7 @@ function dco_sponsor_field_default_fields() {
           'currency_code' => 'default',
         ),
         'type' => 'commerce_price_full',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
   );
@@ -180,7 +180,7 @@ function dco_sponsor_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => 36,
+        'weight' => '36',
       ),
     ),
   );
@@ -256,7 +256,7 @@ function dco_sponsor_field_default_fields() {
           'display_label' => TRUE,
         ),
         'type' => 'options_onoff',
-        'weight' => 37,
+        'weight' => '37',
       ),
     ),
   );
@@ -460,7 +460,9 @@ function dco_sponsor_field_default_fields() {
       ),
       'locked' => '0',
       'module' => 'commerce_product_reference',
-      'settings' => array(),
+      'settings' => array(
+        'options_list_limit' => NULL,
+      ),
       'translatable' => '0',
       'type' => 'commerce_product_reference',
     ),
@@ -478,6 +480,7 @@ function dco_sponsor_field_default_fields() {
             'default_quantity' => '1',
             'line_item_type' => 0,
             'show_quantity' => 1,
+            'show_single_product_attributes' => FALSE,
           ),
           'type' => 'commerce_cart_add_to_cart_form',
           'weight' => '4',
@@ -490,6 +493,7 @@ function dco_sponsor_field_default_fields() {
             'default_quantity' => 1,
             'line_item_type' => 'product',
             'show_quantity' => FALSE,
+            'show_single_product_attributes' => FALSE,
           ),
           'type' => 'commerce_cart_add_to_cart_form',
           'weight' => '3',

@@ -9,21 +9,6 @@
  */
 function dco_registration_default_rules_configuration() {
   $items = array();
-  $items['rules_reconcile_user_account_to_registration'] = entity_import('rules_config', '{ "rules_reconcile_user_account_to_registration" : {
-      "LABEL" : "Reconcile user account to registration",
-      "PLUGIN" : "action set",
-      "REQUIRES" : [ "rules" ],
-      "USES VARIABLES" : {
-        "registration" : { "label" : "Registration", "type" : "registration" },
-        "user" : { "label" : "User Account", "type" : "user" }
-      },
-      "ACTION SET" : [
-        { "data_set" : { "data" : [ "registration:anon-mail" ] } },
-        { "data_set" : { "data" : [ "registration:user" ], "value" : [ "user" ] } },
-        { "entity_save" : { "data" : [ "registration" ], "immediate" : 1 } }
-      ]
-    }
-  }');
   $items['rules_check_registration_on_new_account'] = entity_import('rules_config', '{ "rules_check_registration_on_new_account" : {
       "LABEL" : "Check registration on new account",
       "PLUGIN" : "reaction rule",
@@ -52,6 +37,42 @@ function dco_registration_default_rules_configuration() {
             "ITEM" : { "list_item" : "Current registration" },
             "DO" : [
               { "component_rules_reconcile_user_account_to_registration" : { "registration" : [ "list_item" ], "user" : [ "account" ] } }
+            ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_check_registration_ownership'] = entity_import('rules_config', '{ "rules_check_registration_ownership" : {
+      "LABEL" : "Check registration ownership",
+      "PLUGIN" : "reaction rule",
+      "TAGS" : [ "dco" ],
+      "REQUIRES" : [ "commerce", "rules" ],
+      "ON" : [ "cron" ],
+      "IF" : [
+        { "entity_exists" : { "type" : "registration", "property" : "author_uid", "value" : "0" } }
+      ],
+      "DO" : [
+        { "entity_query" : {
+            "USING" : {
+              "type" : "registration",
+              "property" : "author_uid",
+              "value" : "0",
+              "limit" : "20"
+            },
+            "PROVIDE" : { "entity_fetched" : { "registrations" : "Registrations" } }
+          }
+        },
+        { "LOOP" : {
+            "USING" : { "list" : [ "registrations" ] },
+            "ITEM" : { "registration" : "Current registration" },
+            "DO" : [
+              { "entity_fetch" : {
+                  "USING" : { "type" : "commerce_order", "id" : [ "registration:order-id" ] },
+                  "PROVIDE" : { "entity_fetched" : { "order" : "Order" } }
+                }
+              },
+              { "component_rules_reconcile_registration_owner" : { "registration" : [ "registration" ], "order" : [ "order" ] } }
             ]
           }
         }
@@ -114,7 +135,7 @@ function dco_registration_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "WEIGHT" : "6",
       "TAGS" : [ "dco" ],
-      "REQUIRES" : [ "rules", "commerce", "registration" ],
+      "REQUIRES" : [ "rules", "commerce", "simplenews_rules", "registration" ],
       "ON" : [ "registration_update", "registration_insert" ],
       "IF" : [
         { "data_is" : { "data" : [ "registration:state:name" ], "value" : "complete" } },
@@ -163,39 +184,18 @@ function dco_registration_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_check_registration_ownership'] = entity_import('rules_config', '{ "rules_check_registration_ownership" : {
-      "LABEL" : "Check registration ownership",
-      "PLUGIN" : "reaction rule",
-      "TAGS" : [ "dco" ],
-      "REQUIRES" : [ "commerce", "rules" ],
-      "ON" : [ "cron" ],
-      "IF" : [
-        { "entity_exists" : { "type" : "registration", "property" : "author_uid", "value" : "0" } }
-      ],
-      "DO" : [
-        { "entity_query" : {
-            "USING" : {
-              "type" : "registration",
-              "property" : "author_uid",
-              "value" : "0",
-              "limit" : "20"
-            },
-            "PROVIDE" : { "entity_fetched" : { "registrations" : "Registrations" } }
-          }
-        },
-        { "LOOP" : {
-            "USING" : { "list" : [ "registrations" ] },
-            "ITEM" : { "registration" : "Current registration" },
-            "DO" : [
-              { "entity_fetch" : {
-                  "USING" : { "type" : "commerce_order", "id" : [ "registration:order-id" ] },
-                  "PROVIDE" : { "entity_fetched" : { "order" : "Order" } }
-                }
-              },
-              { "component_rules_reconcile_registration_owner" : { "registration" : [ "registration" ], "order" : [ "order" ] } }
-            ]
-          }
-        }
+  $items['rules_reconcile_user_account_to_registration'] = entity_import('rules_config', '{ "rules_reconcile_user_account_to_registration" : {
+      "LABEL" : "Reconcile user account to registration",
+      "PLUGIN" : "action set",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "registration" : { "label" : "Registration", "type" : "registration" },
+        "user" : { "label" : "User Account", "type" : "user" }
+      },
+      "ACTION SET" : [
+        { "data_set" : { "data" : [ "registration:anon-mail" ] } },
+        { "data_set" : { "data" : [ "registration:user" ], "value" : [ "user" ] } },
+        { "entity_save" : { "data" : [ "registration" ], "immediate" : 1 } }
       ]
     }
   }');
