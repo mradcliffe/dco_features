@@ -668,7 +668,7 @@ function dco_registration_field_default_fields() {
           'module' => 'registration',
           'settings' => array(),
           'type' => 'registration_form',
-          'weight' => '1',
+          'weight' => '8',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -708,7 +708,7 @@ function dco_registration_field_default_fields() {
         'module' => 'registration',
         'settings' => array(),
         'type' => 'registration_select',
-        'weight' => '14',
+        'weight' => '2',
       ),
     ),
   );
@@ -756,7 +756,7 @@ function dco_registration_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '11',
+          'weight' => '5',
         ),
         'review_pane' => array(
           'label' => 'above',
@@ -825,11 +825,11 @@ function dco_registration_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 12,
+          'weight' => '8',
         ),
         'review_pane' => array(
           'label' => 'above',
@@ -894,11 +894,11 @@ function dco_registration_field_default_fields() {
       'description' => 'Please provide the drupal.org user name of the registrant, if any.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 14,
+          'weight' => '7',
         ),
         'review_pane' => array(
           'label' => 'above',
@@ -966,11 +966,11 @@ function dco_registration_field_default_fields() {
       'description' => 'Please provide the full name of the registrant.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 13,
+          'weight' => '6',
         ),
         'review_pane' => array(
           'label' => 'above',
@@ -1048,7 +1048,7 @@ function dco_registration_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '8',
+          'weight' => '2',
         ),
         'review_pane' => array(
           'label' => 'above',
@@ -1117,7 +1117,7 @@ function dco_registration_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '10',
+          'weight' => '4',
         ),
         'review_pane' => array(
           'label' => 'above',
@@ -1193,7 +1193,7 @@ function dco_registration_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '9',
+          'weight' => '3',
         ),
         'review_pane' => array(
           'label' => 'above',

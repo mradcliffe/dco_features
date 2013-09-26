@@ -1054,7 +1054,7 @@ function dco_session_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -1082,7 +1082,7 @@ function dco_session_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '7',
+        'weight' => '9',
       ),
     ),
   );
@@ -1138,7 +1138,7 @@ function dco_session_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '10',
+          'weight' => '12',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1200,7 +1200,7 @@ function dco_session_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '11',
+        'weight' => '13',
       ),
       'widget_type' => 'optionwidgets_buttons',
     ),
@@ -1266,7 +1266,7 @@ function dco_session_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '10',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1406,7 +1406,7 @@ function dco_session_field_default_fields() {
           'default_value_php' => NULL,
         ),
         'type' => 'options_buttons',
-        'weight' => '5',
+        'weight' => '7',
       ),
       'widget_type' => 'optionwidgets_buttons',
     ),
@@ -1467,7 +1467,7 @@ function dco_session_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '12',
+          'weight' => '13',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1555,7 +1555,7 @@ function dco_session_field_default_fields() {
           'display_label' => 0,
         ),
         'type' => 'options_onoff',
-        'weight' => '12',
+        'weight' => '14',
       ),
       'widget_type' => 'optionwidgets_onoff',
     ),
@@ -1612,7 +1612,7 @@ function dco_session_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '9',
+          'weight' => '11',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -1695,9 +1695,82 @@ function dco_session_field_default_fields() {
           'progress_indicator' => 'bar',
         ),
         'type' => 'image_image',
-        'weight' => '4',
+        'weight' => '6',
       ),
       'widget_type' => 'imagefield_widget',
+    ),
+  );
+
+  // Exported field: 'node-session-field_session_length'.
+  $fields['node-session-field_session_length'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_session_length',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          60 => '1 hour',
+          90 => '1.5 hours',
+          120 => '2 hours',
+          150 => '2.5 hours',
+          180 => '3 hours',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'session',
+      'default_value' => array(
+        0 => array(
+          'value' => '60',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Please choose a session length. This is to help accommodate longer',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '5',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_session_length',
+      'label' => 'Session Length',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '3',
+      ),
     ),
   );
 
@@ -1767,7 +1840,7 @@ function dco_session_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1824,7 +1897,7 @@ function dco_session_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '12',
       ),
       'widget_type' => 'nodereference_buttons',
     ),
@@ -1892,10 +1965,11 @@ function dco_session_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
+          'module' => 'node_reference',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '6',
+          'type' => 'node_reference_default',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1952,7 +2026,7 @@ function dco_session_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '6',
+        'weight' => '8',
       ),
       'widget_type' => 'nodereference_select',
     ),
@@ -2002,7 +2076,7 @@ function dco_session_field_default_fields() {
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => '13',
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2039,7 +2113,7 @@ function dco_session_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '9',
+        'weight' => '11',
       ),
     ),
   );
@@ -2092,7 +2166,7 @@ function dco_session_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'full' => array(
           'label' => 'above',
@@ -2155,7 +2229,7 @@ function dco_session_field_default_fields() {
           'progress_indicator' => 'bar',
         ),
         'type' => 'file_generic',
-        'weight' => '8',
+        'weight' => '10',
       ),
       'widget_type' => 'filefield_widget',
     ),
@@ -2315,7 +2389,7 @@ function dco_session_field_default_fields() {
           'size' => '40',
         ),
         'type' => 'user_reference_autocomplete',
-        'weight' => '2',
+        'weight' => '4',
       ),
       'widget_type' => 'userreference_autocomplete',
     ),
@@ -2370,7 +2444,7 @@ function dco_session_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '7',
+          'weight' => '9',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -2414,7 +2488,7 @@ function dco_session_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '3',
+        'weight' => '5',
       ),
       'widget_type' => 'optionwidgets_buttons',
     ),
@@ -2605,9 +2679,11 @@ function dco_session_field_default_fields() {
   t('Marketing image');
   t('Number of sessions or BoFs that this room can hold in a time slot. Used to allow multiple BoFs in the same room at the same time slot.');
   t('Photo');
+  t('Please choose a session length. This is to help accommodate longer');
   t('Room');
   t('Rooms provide a location for each session.');
   t('Select room(s) in which the session occurs.');
+  t('Session Length');
   t('Session Video URL');
   t('Session capacity');
   t('Slides');

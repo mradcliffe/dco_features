@@ -516,6 +516,14 @@ function dco_session_views_default_views() {
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
   $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
+  /* Field: Content: Experience level */
+  $handler->display->display_options['fields']['field_experience']['id'] = 'field_experience';
+  $handler->display->display_options['fields']['field_experience']['table'] = 'field_data_field_experience';
+  $handler->display->display_options['fields']['field_experience']['field'] = 'field_experience';
+  /* Field: Content: Session Length */
+  $handler->display->display_options['fields']['field_session_length']['id'] = 'field_session_length';
+  $handler->display->display_options['fields']['field_session_length']['table'] = 'field_data_field_session_length';
+  $handler->display->display_options['fields']['field_session_length']['field'] = 'field_session_length';
   /* Field: Content: Featured Session */
   $handler->display->display_options['fields']['field_featured']['id'] = 'field_featured';
   $handler->display->display_options['fields']['field_featured']['table'] = 'field_data_field_featured';
