@@ -79,6 +79,37 @@ function dco_registration_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_check_registration_state'] = entity_import('rules_config', '{ "rules_check_registration_state" : {
+      "LABEL" : "Check Registration State",
+      "PLUGIN" : "reaction rule",
+      "TAGS" : [ "dco" ],
+      "REQUIRES" : [ "commerce", "rules" ],
+      "ON" : [ "cron" ],
+      "IF" : [
+        { "entity_exists" : { "type" : "registration", "property" : "state", "value" : "pending" } }
+      ],
+      "DO" : [
+        { "entity_query" : {
+            "USING" : { "type" : "registration", "property" : "state", "value" : "pending" },
+            "PROVIDE" : { "entity_fetched" : { "registrations" : "Registrations" } }
+          }
+        },
+        { "LOOP" : {
+            "USING" : { "list" : [ "registrations" ] },
+            "ITEM" : { "registration" : "Registration" },
+            "DO" : [
+              { "entity_fetch" : {
+                  "USING" : { "type" : "commerce_order", "id" : [ "registration:order-id" ] },
+                  "PROVIDE" : { "entity_fetched" : { "order" : "Order" } }
+                }
+              },
+              { "component_rules_reconcile_registration_state" : { "registration" : [ "registration" ], "order" : [ "order" ] } }
+            ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_create_account_for_anonymous_registration'] = entity_import('rules_config', '{ "rules_create_account_for_anonymous_registration" : {
       "LABEL" : "Create Account for Anonymous Registration",
       "PLUGIN" : "reaction rule",
@@ -181,6 +212,31 @@ function dco_registration_default_rules_configuration() {
       "ACTION SET" : [
         { "data_set" : { "data" : [ "registration:author" ], "value" : [ "order:owner" ] } },
         { "entity_save" : { "data" : [ "registration" ] } }
+      ]
+    }
+  }');
+  $items['rules_reconcile_registration_state'] = entity_import('rules_config', '{ "rules_reconcile_registration_state" : {
+      "LABEL" : "Reconcile Registration State",
+      "PLUGIN" : "rule",
+      "TAGS" : [ "dco" ],
+      "REQUIRES" : [ "rules", "commerce_order" ],
+      "USES VARIABLES" : {
+        "registration" : { "label" : "Registration", "type" : "registration" },
+        "order" : { "label" : "Order", "type" : "commerce_order" }
+      },
+      "IF" : [
+        { "data_is" : { "data" : [ "registration:state" ], "value" : "pending" } },
+        { "data_is" : {
+            "data" : [ "order:state" ],
+            "op" : "IN",
+            "value" : { "value" : { "pending" : "pending", "completed" : "completed" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "data_set" : { "data" : [ "registration:state" ], "value" : "complete" } },
+        { "entity_save" : { "data" : [ "registration" ], "immediate" : 1 } },
+        { "commerce_order_update_state" : { "commerce_order" : [ "order" ], "order_state" : "completed" } }
       ]
     }
   }');

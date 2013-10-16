@@ -529,6 +529,16 @@ function dco_registration_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
+    'action::registration_views_set_state_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'default_registration_state' => 'complete',
+      ),
+    ),
   );
   $handler->display->display_options['filter_groups']['operator'] = 'OR';
   $handler->display->display_options['filter_groups']['groups'] = array(
