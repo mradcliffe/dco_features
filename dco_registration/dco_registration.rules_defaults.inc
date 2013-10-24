@@ -122,9 +122,9 @@ function dco_registration_default_rules_configuration() {
         "commerce_checkout",
         "registration"
       ],
-      "ON" : [ "registration_update", "registration_insert" ],
+      "ON" : [ "registration_update" ],
       "IF" : [
-        { "data_is" : { "data" : [ "registration:state:name" ], "value" : "complete" } },
+        { "data_is" : { "data" : [ "registration:state" ], "value" : "complete" } },
         { "NOT data_is_empty" : { "data" : [ "registration:anon-mail" ] } },
         { "NOT entity_exists" : {
             "type" : "user",
@@ -167,9 +167,9 @@ function dco_registration_default_rules_configuration() {
       "WEIGHT" : "6",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules", "commerce", "simplenews_rules", "registration" ],
-      "ON" : [ "registration_update", "registration_insert" ],
+      "ON" : [ "registration_update" ],
       "IF" : [
-        { "data_is" : { "data" : [ "registration:state:name" ], "value" : "complete" } },
+        { "data_is" : { "data" : [ "registration:state" ], "value" : "complete" } },
         { "NOT data_is_empty" : { "data" : [ "registration:anon-mail" ] } },
         { "entity_exists" : {
             "type" : "user",

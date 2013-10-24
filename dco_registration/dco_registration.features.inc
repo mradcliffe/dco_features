@@ -64,8 +64,8 @@ function dco_registration_default_registration_state() {
     "label" : "Canceled",
     "description" : "Registration was cancelled",
     "default_state" : "0",
-    "active" : "0",
-    "show_on_form" : "0",
+    "active" : "1",
+    "show_on_form" : "1",
     "weight" : "1"
   }');
   $items['complete'] = entity_import('registration_state', '{
