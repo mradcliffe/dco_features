@@ -108,11 +108,10 @@ function dco_sponsor_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<strong>We are currently seeking sponsorship for DrupalCamp Ohio 2013!</strong>
-
+  $handler->display->display_options['header']['area']['content'] = '<h3>We are currently seeking sponsorship for DrupalCamp Ohio 2013!</h3>
 Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to become a sponsor today. If you have any questions please do not hesitate to <a href="/contact">contact us</a>.
 ';
-  $handler->display->display_options['header']['area']['format'] = '1';
+  $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: View area */
   $handler->display->display_options['footer']['view']['id'] = 'view';
@@ -165,13 +164,19 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   /* Display: Random */
   $handler = $view->new_display('block', 'Random', 'block_1');
   $handler->display->display_options['display_description'] = 'A random platinum sponsor';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'View all of our sponsors';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -181,6 +186,39 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
   $handler->display->display_options['sorts']['random']['field'] = 'random';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'sponsor' => 'sponsor',
+  );
+  $handler->display->display_options['filters']['type']['group'] = '0';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filter criterion: Content: Event (field_event) */
+  $handler->display->display_options['filters']['field_event_nid']['id'] = 'field_event_nid';
+  $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
+  $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
+  $handler->display->display_options['filters']['field_event_nid']['value'] = array(
+    226 => '226',
+  );
+  /* Filter criterion: Content: Sponsorship Level (field_sponsorship_level) */
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['id'] = 'field_sponsorship_level_value';
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['table'] = 'field_data_field_sponsorship_level';
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['field'] = 'field_sponsorship_level_value';
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['value'] = array(
+    0 => '0',
+    1 => '1',
+    2 => '2',
+    4 => '4',
+  );
   $handler->display->display_options['block_description'] = 'Random Sponsor';
 
   /* Display: Platinum */
@@ -448,8 +486,8 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Content: Referenced product */
   $handler->display->display_options['relationships']['field_product_reference_product_id']['id'] = 'field_product_reference_product_id';

@@ -12,6 +12,7 @@ function dco_base_default_rules_configuration() {
   $items['rules_new_comment_posted'] = entity_import('rules_config', '{ "rules_new_comment_posted" : {
       "LABEL" : "New comment posted",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules", "comment" ],
       "ON" : [ "comment_insert" ],
@@ -30,6 +31,7 @@ function dco_base_default_rules_configuration() {
   $items['rules_new_content_posted'] = entity_import('rules_config', '{ "rules_new_content_posted" : {
       "LABEL" : "New content posted",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules" ],
       "ON" : [ "node_insert" ],

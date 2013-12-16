@@ -10,11 +10,12 @@
 function dco_imagecache_image_default_styles() {
   $styles = array();
 
-  // Exported image style: marketing_image
+  // Exported image style: marketing_image.
   $styles['marketing_image'] = array(
     'name' => 'marketing_image',
+    'label' => 'marketing_image',
     'effects' => array(
-      30 => array(
+      1 => array(
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',
@@ -32,7 +33,7 @@ function dco_imagecache_image_default_styles() {
     ),
   );
 
-  // Exported image style: session_image
+  // Exported image style: session_image.
   $styles['session_image'] = array(
     'name' => 'session_image',
     'effects' => array(
@@ -53,13 +54,15 @@ function dco_imagecache_image_default_styles() {
         'weight' => '0',
       ),
     ),
+    'label' => 'session_image',
   );
 
-  // Exported image style: sponsor_logo
+  // Exported image style: sponsor_logo.
   $styles['sponsor_logo'] = array(
     'name' => 'sponsor_logo',
+    'label' => 'sponsor_logo',
     'effects' => array(
-      32 => array(
+      2 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -69,8 +72,8 @@ function dco_imagecache_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '190',
-          'height' => '120',
+          'width' => '210',
+          'height' => '',
           'upscale' => 0,
         ),
         'weight' => '0',
@@ -78,7 +81,7 @@ function dco_imagecache_image_default_styles() {
     ),
   );
 
-  // Exported image style: sponsor_logo_bronze
+  // Exported image style: sponsor_logo_bronze.
   $styles['sponsor_logo_bronze'] = array(
     'name' => 'sponsor_logo_bronze',
     'effects' => array(
@@ -99,9 +102,10 @@ function dco_imagecache_image_default_styles() {
         'weight' => '0',
       ),
     ),
+    'label' => 'sponsor_logo_bronze',
   );
 
-  // Exported image style: sponsor_logo_callout
+  // Exported image style: sponsor_logo_callout.
   $styles['sponsor_logo_callout'] = array(
     'name' => 'sponsor_logo_callout',
     'effects' => array(
@@ -122,9 +126,10 @@ function dco_imagecache_image_default_styles() {
         'weight' => '0',
       ),
     ),
+    'label' => 'sponsor_logo_callout',
   );
 
-  // Exported image style: sponsor_logo_gold
+  // Exported image style: sponsor_logo_gold.
   $styles['sponsor_logo_gold'] = array(
     'name' => 'sponsor_logo_gold',
     'effects' => array(
@@ -145,9 +150,10 @@ function dco_imagecache_image_default_styles() {
         'weight' => '0',
       ),
     ),
+    'label' => 'sponsor_logo_gold',
   );
 
-  // Exported image style: sponsor_logo_platinum
+  // Exported image style: sponsor_logo_platinum.
   $styles['sponsor_logo_platinum'] = array(
     'name' => 'sponsor_logo_platinum',
     'effects' => array(
@@ -168,9 +174,10 @@ function dco_imagecache_image_default_styles() {
         'weight' => '0',
       ),
     ),
+    'label' => 'sponsor_logo_platinum',
   );
 
-  // Exported image style: sponsor_logo_silver
+  // Exported image style: sponsor_logo_silver.
   $styles['sponsor_logo_silver'] = array(
     'name' => 'sponsor_logo_silver',
     'effects' => array(
@@ -191,9 +198,10 @@ function dco_imagecache_image_default_styles() {
         'weight' => '0',
       ),
     ),
+    'label' => 'sponsor_logo_silver',
   );
 
-  // Exported image style: user_large
+  // Exported image style: user_large.
   $styles['user_large'] = array(
     'name' => 'user_large',
     'effects' => array(
@@ -214,9 +222,10 @@ function dco_imagecache_image_default_styles() {
         'weight' => '0',
       ),
     ),
+    'label' => 'user_large',
   );
 
-  // Exported image style: user_med
+  // Exported image style: user_med.
   $styles['user_med'] = array(
     'name' => 'user_med',
     'effects' => array(
@@ -236,9 +245,10 @@ function dco_imagecache_image_default_styles() {
         'weight' => '0',
       ),
     ),
+    'label' => 'user_med',
   );
 
-  // Exported image style: user_thumb
+  // Exported image style: user_thumb.
   $styles['user_thumb'] = array(
     'name' => 'user_thumb',
     'effects' => array(
@@ -258,6 +268,7 @@ function dco_imagecache_image_default_styles() {
         'weight' => '0',
       ),
     ),
+    'label' => 'user_thumb',
   );
 
   return $styles;

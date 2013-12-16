@@ -255,5 +255,14 @@ function dco_registration_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_redirect_to_cart_after_adding_to_cart'] = entity_import('rules_config', '{ "rules_redirect_to_cart_after_adding_to_cart" : {
+      "LABEL" : "Redirect to cart after adding to cart",
+      "PLUGIN" : "reaction rule",
+      "TAGS" : [ "dco" ],
+      "REQUIRES" : [ "rules", "commerce_cart" ],
+      "ON" : [ "commerce_cart_product_add" ],
+      "DO" : [ { "redirect" : { "url" : "cart" } } ]
+    }
+  }');
   return $items;
 }

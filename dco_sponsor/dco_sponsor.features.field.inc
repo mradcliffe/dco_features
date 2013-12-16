@@ -107,7 +107,7 @@ function dco_sponsor_field_default_fields() {
           'currency_code' => 'default',
         ),
         'type' => 'commerce_price_full',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );
@@ -180,7 +180,7 @@ function dco_sponsor_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '36',
+        'weight' => 36,
       ),
     ),
   );
@@ -256,7 +256,7 @@ function dco_sponsor_field_default_fields() {
           'display_label' => TRUE,
         ),
         'type' => 'options_onoff',
-        'weight' => '37',
+        'weight' => 37,
       ),
     ),
   );
@@ -556,7 +556,7 @@ function dco_sponsor_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -618,6 +618,7 @@ function dco_sponsor_field_default_fields() {
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
+          'bof' => 0,
           'event' => 'event',
           'invoice' => 0,
           'news' => 0,
@@ -627,7 +628,9 @@ function dco_sponsor_field_default_fields() {
           'room' => 0,
           'schedule_item' => 0,
           'session' => 0,
+          'simplenews' => 0,
           'sponsor' => 0,
+          'sprint' => 0,
           'time_slot' => 0,
           'webform' => 0,
         ),
@@ -647,9 +650,10 @@ function dco_sponsor_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
+          'module' => 'node_reference',
           'settings' => array(),
-          'type' => 'hidden',
+          'type' => 'node_reference_plain',
           'weight' => '5',
         ),
         'teaser' => array(
@@ -732,7 +736,7 @@ function dco_sponsor_field_default_fields() {
             'image_style' => '',
           ),
           'type' => 'image',
-          'weight' => '2',
+          'weight' => '0',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -864,7 +868,7 @@ function dco_sponsor_field_default_fields() {
           'module' => 'user_reference',
           'settings' => array(),
           'type' => 'user_reference_default',
-          'weight' => '4',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'above',
@@ -972,7 +976,7 @@ function dco_sponsor_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '0',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -1076,7 +1080,7 @@ function dco_sponsor_field_default_fields() {
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => '1',
+          'weight' => '4',
         ),
         'full' => array(
           'label' => 'hidden',

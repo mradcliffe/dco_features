@@ -696,6 +696,7 @@ function dco_session_field_default_fields() {
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
+          'bof' => 0,
           'event' => 'event',
           'invoice' => 0,
           'news' => 0,
@@ -705,7 +706,9 @@ function dco_session_field_default_fields() {
           'room' => 0,
           'schedule_item' => 0,
           'session' => 0,
+          'simplenews' => 0,
           'sponsor' => 0,
+          'sprint' => 0,
           'time_slot' => 0,
           'webform' => 0,
         ),
@@ -786,6 +789,7 @@ function dco_session_field_default_fields() {
           'view' => 'view',
         ),
         'referenceable_types' => array(
+          'bof' => 0,
           'event' => 0,
           'invoice' => 0,
           'news' => 0,
@@ -795,7 +799,9 @@ function dco_session_field_default_fields() {
           'room' => 'room',
           'schedule_item' => 0,
           'session' => 0,
+          'simplenews' => 0,
           'sponsor' => 0,
+          'sprint' => 0,
           'time_slot' => 0,
           'webform' => 0,
         ),
@@ -924,6 +930,7 @@ function dco_session_field_default_fields() {
           'view' => 'view',
         ),
         'referenceable_types' => array(
+          'bof' => 0,
           'event' => 0,
           'invoice' => 0,
           'news' => 0,
@@ -933,7 +940,9 @@ function dco_session_field_default_fields() {
           'room' => 0,
           'schedule_item' => 0,
           'session' => 0,
+          'simplenews' => 0,
           'sponsor' => 0,
+          'sprint' => 0,
           'time_slot' => 'time_slot',
           'webform' => 0,
         ),
@@ -1234,6 +1243,7 @@ function dco_session_field_default_fields() {
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
+          'bof' => 0,
           'event' => 'event',
           'invoice' => 0,
           'news' => 0,
@@ -1243,7 +1253,9 @@ function dco_session_field_default_fields() {
           'room' => 0,
           'schedule_item' => 0,
           'session' => 0,
+          'simplenews' => 0,
           'sponsor' => 0,
+          'sprint' => 0,
           'time_slot' => 0,
           'webform' => 0,
         ),
@@ -1806,6 +1818,7 @@ function dco_session_field_default_fields() {
           'view' => 'view',
         ),
         'referenceable_types' => array(
+          'bof' => 0,
           'event' => 0,
           'invoice' => 0,
           'news' => 0,
@@ -1815,7 +1828,9 @@ function dco_session_field_default_fields() {
           'room' => 'room',
           'schedule_item' => 0,
           'session' => 0,
+          'simplenews' => 0,
           'sponsor' => 0,
+          'sprint' => 0,
           'time_slot' => 0,
           'webform' => 0,
         ),
@@ -1935,6 +1950,7 @@ function dco_session_field_default_fields() {
           'view' => 'view',
         ),
         'referenceable_types' => array(
+          'bof' => 0,
           'event' => 0,
           'invoice' => 0,
           'news' => 0,
@@ -1944,7 +1960,9 @@ function dco_session_field_default_fields() {
           'room' => 0,
           'schedule_item' => 0,
           'session' => 0,
+          'simplenews' => 0,
           'sponsor' => 0,
+          'sprint' => 0,
           'time_slot' => 'time_slot',
           'webform' => 0,
         ),
@@ -2126,6 +2144,9 @@ function dco_session_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_slides',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -2144,7 +2165,7 @@ function dco_session_field_default_fields() {
       'settings' => array(
         'description_field' => '0',
         'display_default' => 1,
-        'display_field' => '1',
+        'display_field' => 1,
         'field_permissions' => array(
           'edit' => 'edit',
           'view' => 'view',

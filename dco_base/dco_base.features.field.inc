@@ -170,6 +170,7 @@ function dco_base_field_default_fields() {
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
+          'bof' => 0,
           'event' => 'event',
           'invoice' => 0,
           'news' => 0,
@@ -179,7 +180,9 @@ function dco_base_field_default_fields() {
           'room' => 0,
           'schedule_item' => 0,
           'session' => 0,
+          'simplenews' => 0,
           'sponsor' => 0,
+          'sprint' => 0,
           'time_slot' => 0,
           'webform' => 0,
         ),
