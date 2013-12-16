@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DCO Birds of a Feather feature.
+ */
+
+include_once 'dco_bof.features.inc';
