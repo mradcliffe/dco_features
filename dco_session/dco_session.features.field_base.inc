@@ -48,51 +48,6 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'session',
   );
 
-  // Exported field_base: 'field_event'
-  $field_bases['field_event'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_event',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'indexes' => array(
-      'nid' => array(
-        0 => 'nid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'node_reference',
-    'settings' => array(
-      'referenceable_types' => array(
-        'bof' => 0,
-        'event' => 'event',
-        'invoice' => 0,
-        'news' => 0,
-        'page' => 0,
-        'product' => 0,
-        'report' => 0,
-        'room' => 0,
-        'schedule_item' => 0,
-        'session' => 0,
-        'simplenews' => 0,
-        'sponsor' => 0,
-        'sprint' => 0,
-        'time_slot' => 0,
-        'webform' => 0,
-      ),
-      'view' => array(
-        'args' => array(),
-        'display_name' => 'references_1',
-        'view_name' => 'latest_event',
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'node_reference',
-  );
-
   // Exported field_base: 'field_experience'
   $field_bases['field_experience'] = array(
     'active' => 1,
@@ -195,28 +150,6 @@ function dco_session_field_default_field_bases() {
     'translatable' => 0,
     'type' => 'image',
     'type_name' => 'session',
-  );
-
-  // Exported field_base: 'field_registration_type'
-  $field_bases['field_registration_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_registration_type',
-    'field_permissions' => array(
-      'type' => 2,
-    ),
-    'indexes' => array(
-      'registration_type' => array(
-        0 => 'registration_type',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'registration',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'registration',
   );
 
   // Exported field_base: 'field_room_capacity'

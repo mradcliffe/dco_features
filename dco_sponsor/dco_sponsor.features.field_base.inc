@@ -54,36 +54,6 @@ function dco_sponsor_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_image_cache'
-  $field_bases['field_image_cache'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_image_cache',
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => NULL,
-      'description_field' => 0,
-      'field_permissions' => array(
-        'edit' => 'edit',
-        'view' => 'view',
-      ),
-      'list_default' => 1,
-      'list_field' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
-    'type_name' => 'product',
-  );
-
   // Exported field_base: 'field_logo'
   $field_bases['field_logo'] = array(
     'active' => 1,
@@ -112,30 +82,6 @@ function dco_sponsor_field_default_field_bases() {
     'translatable' => 0,
     'type' => 'image',
     'type_name' => 'sponsor',
-  );
-
-  // Exported field_base: 'field_product_reference'
-  $field_bases['field_product_reference'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_product_reference',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'indexes' => array(
-      'product_id' => array(
-        0 => 'product_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'commerce_product_reference',
-    'settings' => array(
-      'options_list_limit' => NULL,
-    ),
-    'translatable' => 0,
-    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_related_attendees'
