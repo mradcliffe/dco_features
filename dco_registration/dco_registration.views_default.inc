@@ -164,13 +164,13 @@ function dco_registration_views_default_views() {
       ),
     ),
     3 => array(
-      'title' => '2014',
+      'title' => '2015',
       'operator' => 'between',
       'value' => array(
         'type' => 'date',
         'value' => '',
-        'min' => '2014-01-01',
-        'max' => '2014-12-31',
+        'min' => '2015-01-01',
+        'max' => '2015-12-31',
       ),
     ),
   );
@@ -610,7 +610,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2015-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'Product SKU';
@@ -700,7 +700,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2015-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'Product SKU';
@@ -857,7 +857,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2015-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'SKU';
@@ -971,7 +971,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2015-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'SKU';
@@ -1192,7 +1192,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku_1']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku_1']['field'] = 'sku';
   $handler->display->display_options['filters']['sku_1']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku_1']['value'] = 'dco-2014-2718';
+  $handler->display->display_options['filters']['sku_1']['value'] = 'dco-2015-2718';
   $handler->display->display_options['filters']['sku_1']['group'] = 2;
   $handler->display->display_options['filters']['sku_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku_1']['expose']['operator_id'] = 'sku_1_op';
@@ -1271,7 +1271,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2015-2718';
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'SKU';
   $handler->display->display_options['filters']['sku']['expose']['description'] = 'e.g.: dco-YYYY';
@@ -1552,7 +1552,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'commerce_product_product_id';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2015-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'SKU';
@@ -1638,7 +1638,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2015-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'SKU';

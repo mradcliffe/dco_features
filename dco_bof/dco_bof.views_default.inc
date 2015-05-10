@@ -110,7 +110,7 @@ function dco_bof_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    226 => '226',
+    1061 => '1061',
   );
 
   /* Display: Admin */

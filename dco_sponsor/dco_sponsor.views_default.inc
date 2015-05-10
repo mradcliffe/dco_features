@@ -80,7 +80,7 @@ function dco_sponsor_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    646 => '646',
+    1061 => '1061',
   );
 
   /* Display: Sponsor Page */
@@ -110,7 +110,7 @@ function dco_sponsor_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<h3>We are currently seeking sponsorship for DrupalCamp Ohio 2014!</h3>
+  $handler->display->display_options['header']['area']['content'] = '<h3>We are currently seeking sponsorship for DrupalCamp Ohio 2015!</h3>
 Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to become a sponsor today. If you have any questions please do not hesitate to <a href="/contact">contact us</a>.
 ';
   $handler->display->display_options['header']['area']['format'] = '2';
@@ -212,7 +212,7 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    646 => '646',
+    1061 => '1061',
   );
   /* Filter criterion: Content: Sponsorship Level (field_sponsorship_level) */
   $handler->display->display_options['filters']['field_sponsorship_level_value']['id'] = 'field_sponsorship_level_value';
@@ -278,7 +278,7 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    646 => '646',
+    1061 => '1061',
   );
   /* Filter criterion: Content: Sponsorship Level (field_sponsorship_level) */
   $handler->display->display_options['filters']['field_sponsorship_level_value']['id'] = 'field_sponsorship_level_value';
@@ -350,7 +350,7 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    646 => '646',
+    1061 => '1061',
   );
   /* Filter criterion: Content: Sponsorship Level (field_sponsorship_level) */
   $handler->display->display_options['filters']['field_sponsorship_level_value']['id'] = 'field_sponsorship_level_value';
@@ -385,7 +385,7 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    646 => '646',
+    1061 => '1061',
   );
   /* Filter criterion: Content: Sponsorship Level (field_sponsorship_level) */
   $handler->display->display_options['filters']['field_sponsorship_level_value']['id'] = 'field_sponsorship_level_value';
@@ -420,7 +420,7 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    646 => '646',
+    1061 => '1061',
   );
   /* Filter criterion: Content: Sponsorship Level (field_sponsorship_level) */
   $handler->display->display_options['filters']['field_sponsorship_level_value']['id'] = 'field_sponsorship_level_value';
@@ -457,7 +457,7 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    646 => '646',
+    1061 => '1061',
   );
   /* Filter criterion: Content: Sponsorship Level (field_sponsorship_level) */
   $handler->display->display_options['filters']['field_sponsorship_level_value']['id'] = 'field_sponsorship_level_value';
