@@ -13,9 +13,10 @@ function dco_base_default_rules_configuration() {
       "LABEL" : "New comment posted",
       "PLUGIN" : "reaction rule",
       "ACTIVE" : false,
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules", "comment" ],
-      "ON" : [ "comment_insert" ],
+      "ON" : { "comment_insert" : [] },
       "DO" : [
         { "component_rules_notify_admin_of_new_content" : {
             "author" : [ "comment:author" ],
@@ -32,9 +33,10 @@ function dco_base_default_rules_configuration() {
       "LABEL" : "New content posted",
       "PLUGIN" : "reaction rule",
       "ACTIVE" : false,
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules" ],
-      "ON" : [ "node_insert" ],
+      "ON" : { "node_insert" : [] },
       "DO" : [
         { "component_rules_notify_admin_of_new_content" : {
             "author" : [ "node:author" ],
@@ -50,6 +52,7 @@ function dco_base_default_rules_configuration() {
   $items['rules_notify_admin_of_new_content'] = entity_import('rules_config', '{ "rules_notify_admin_of_new_content" : {
       "LABEL" : "Notify Admin of New Content",
       "PLUGIN" : "rule",
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {

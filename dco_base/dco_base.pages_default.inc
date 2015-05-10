@@ -163,7 +163,7 @@ function dco_base_default_page_manager_pages() {
         'identifier' => 'Node',
         'keyword' => 'node',
         'name' => 'entity:node',
-        'entity_id' => '226',
+        'entity_id' => '646',
         'id' => 1,
       ),
     ),
@@ -224,7 +224,7 @@ function dco_base_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => '',
-      'body' => '<p><img alt="" class="event-logo" src="/sites/all/themes/dco2013/images/event-emblem.png"></p><h1><span class="drupal-camp">Drupal Camp</span> <span class="ohio">Ohio</span> <span class="year">2013</span></h1>',
+      'body' => '<p><img alt="" class="event-logo" src="/sites/all/themes/dco2013/images/event-emblem.png"></p><h1><span class="drupal-camp">Drupal Camp</span> <span class="ohio">Ohio</span> <span class="year">2015</span></h1>',
       'format' => '2',
       'substitute' => 0,
     );
@@ -341,7 +341,7 @@ function dco_base_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Dates',
       'title' => '',
-      'body' => '<time class="begin" datetime="2013/12/13 08:00"><span class="month">December</span><span class="day">13</span></time><time class="end" datetime="2013/12/14 17:30"><span class="month">And</span><span class="day">14</span></time>',
+      'body' => '<time class="begin" datetime="2015/10/23 08:00"><span class="month">October</span><span class="day">23</span></time><time class="end" datetime="2015/10/24 17:30"><span class="month">And</span><span class="day">24</span></time>',
       'format' => '2',
       'substitute' => 1,
     );

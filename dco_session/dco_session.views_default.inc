@@ -74,7 +74,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['fields']['field_slot_datetime']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_slot_datetime']['settings'] = array(
     'format_type' => 'short',
-    'fromto' => 'value',
+    'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
@@ -219,8 +219,8 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = '0';
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
-  /* Display: Schedule */
-  $handler = $view->new_display('page', 'Schedule', 'page_1');
+  /* Display: Friday */
+  $handler = $view->new_display('page', 'Friday', 'page_1');
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['defaults']['empty'] = FALSE;
@@ -231,7 +231,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['empty']['text']['empty'] = TRUE;
   $handler->display->display_options['empty']['text']['content'] = '<nav>
 <ul class="item-list links action-links">
-  <li><a href="/node/add/session">Submit a session</a> for DrupalCamp Ohio 2013!</li>
+  <li><a href="/node/add/session">Submit a session</a> for DrupalCamp Ohio 2014!</li>
 </ul>
 </nav>
 
@@ -274,14 +274,14 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    226 => '226',
+    646 => '646',
   );
   /* Filter criterion: Date: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['relationship'] = 'field_session_slot_nid';
-  $handler->display->display_options['filters']['date_filter']['value']['value'] = '2013-12-13';
+  $handler->display->display_options['filters']['date_filter']['value']['value'] = '2014-11-14';
   $handler->display->display_options['filters']['date_filter']['year_range'] = '-1:+1';
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_slot_datetime.field_slot_datetime_value' => 'field_data_field_slot_datetime.field_slot_datetime_value',
@@ -430,7 +430,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['empty']['text']['empty'] = TRUE;
   $handler->display->display_options['empty']['text']['content'] = '<nav>
 <ul class="item-list links action-links">
-  <li><a href="/node/add/session">Submit a session</a> for DrupalCamp Ohio 2013!</li>
+  <li><a href="/node/add/session">Submit a session</a> for DrupalCamp Ohio 2014!</li>
 </ul>
 </nav>
 
@@ -472,14 +472,14 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    226 => '226',
+    646 => '646',
   );
   /* Filter criterion: Date: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['relationship'] = 'field_session_slot_nid';
-  $handler->display->display_options['filters']['date_filter']['value']['value'] = '2013-12-14';
+  $handler->display->display_options['filters']['date_filter']['value']['value'] = '2014-11-15';
   $handler->display->display_options['filters']['date_filter']['year_range'] = '-1:+1';
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_slot_datetime.field_slot_datetime_value' => 'field_data_field_slot_datetime.field_slot_datetime_value',
@@ -789,7 +789,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    226 => '226',
+    646 => '646',
   );
 
   /* Display: Totals */
@@ -866,10 +866,11 @@ function dco_session_views_default_views() {
   );
   $handler->display->display_options['style_options']['sticky'] = TRUE;
   /* No results behavior: Global: Text area */
-  $handler->display->display_options['empty']['text']['id'] = 'area';
+  $handler->display->display_options['empty']['text']['id'] = 'text';
   $handler->display->display_options['empty']['text']['table'] = 'views';
   $handler->display->display_options['empty']['text']['field'] = 'area';
-  $handler->display->display_options['empty']['text']['content'] = 'No sessions have been submitted.';
+  $handler->display->display_options['empty']['text']['empty'] = TRUE;
+  $handler->display->display_options['empty']['text']['content'] = 'We are still accepting session proposals';
   $handler->display->display_options['empty']['text']['format'] = '1';
   /* Relationship: Content: Speaker(s) (field_speakers) */
   $handler->display->display_options['relationships']['field_speakers_uid']['id'] = 'field_speakers_uid';
@@ -1019,7 +1020,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    226 => '226',
+    646 => '646',
   );
   /* Filter criterion: Content: Status (field_accepted) */
   $handler->display->display_options['filters']['field_accepted_value']['id'] = 'field_accepted_value';
@@ -1068,7 +1069,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    226 => '226',
+    646 => '646',
   );
   $handler->display->display_options['path'] = 'program/sessions/proposed/rss';
   $handler->display->display_options['displays'] = array(
@@ -1366,7 +1367,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    226 => '226',
+    646 => '646',
   );
   /* Filter criterion: Content: Status (field_accepted) */
   $handler->display->display_options['filters']['field_accepted_value']['id'] = 'field_accepted_value';
@@ -1377,6 +1378,12 @@ function dco_session_views_default_views() {
     1 => '1',
     2 => '2',
   );
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'users';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['relationship'] = 'field_speakers_uid';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
   $handler->display->display_options['path'] = 'program/sessions/proposed';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Proposed Sessions';
@@ -1548,7 +1555,7 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
   $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
   $handler->display->display_options['filters']['field_event_nid']['value'] = array(
-    226 => '226',
+    646 => '646',
   );
 
   /* Display: Block: Rooms */
@@ -1594,6 +1601,10 @@ function dco_session_views_default_views() {
   $handler->display->display_options['relationships']['field_session_slot_nid']['field'] = 'field_session_slot_nid';
   $handler->display->display_options['relationships']['field_session_slot_nid']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_session_slot_nid']['delta'] = '-1';
+  /* Relationship: Registration: Node to Registration */
+  $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
+  $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -1657,6 +1668,13 @@ function dco_session_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = '0';
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Event (field_event) */
+  $handler->display->display_options['filters']['field_event_nid']['id'] = 'field_event_nid';
+  $handler->display->display_options['filters']['field_event_nid']['table'] = 'field_data_field_event';
+  $handler->display->display_options['filters']['field_event_nid']['field'] = 'field_event_nid';
+  $handler->display->display_options['filters']['field_event_nid']['value'] = array(
+    646 => '646',
+  );
 
   /* Display: Block: Timeslots */
   $handler = $view->new_display('block', 'Block: Timeslots', 'block_6');

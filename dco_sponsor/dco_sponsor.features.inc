@@ -14,7 +14,7 @@ function dco_sponsor_commerce_product_default_types() {
       'name' => 'Product',
       'description' => 'A basic product type.',
       'help' => '',
-      'revision' => '1',
+      'revision' => 1,
     ),
   );
   return $items;
@@ -23,12 +23,10 @@ function dco_sponsor_commerce_product_default_types() {
 /**
  * Implements hook_ctools_plugin_api().
  */
-function dco_sponsor_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function dco_sponsor_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -37,8 +35,8 @@ function dco_sponsor_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function dco_sponsor_views_api() {
-  return array("version" => "3.0");
+function dco_sponsor_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**
@@ -63,5 +61,6 @@ function dco_sponsor_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

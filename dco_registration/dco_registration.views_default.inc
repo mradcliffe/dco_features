@@ -42,12 +42,12 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['relationships']['order_id']['id'] = 'order_id';
   $handler->display->display_options['relationships']['order_id']['table'] = 'commerce_payment_transaction';
   $handler->display->display_options['relationships']['order_id']['field'] = 'order_id';
-  /* Relationship: Commerce Order: Referenced line item */
+  /* Relationship: Commerce Order: Referenced line items */
   $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['id'] = 'commerce_line_items_line_item_id';
   $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['table'] = 'field_data_commerce_line_items';
   $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['field'] = 'commerce_line_items_line_item_id';
   $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['relationship'] = 'order_id';
-  /* Relationship: Commerce Line item: Referenced product */
+  /* Relationship: Commerce Line item: Referenced products */
   $handler->display->display_options['relationships']['commerce_product_product_id']['id'] = 'commerce_product_product_id';
   $handler->display->display_options['relationships']['commerce_product_product_id']['table'] = 'field_data_commerce_product';
   $handler->display->display_options['relationships']['commerce_product_product_id']['field'] = 'commerce_product_product_id';
@@ -163,6 +163,16 @@ function dco_registration_views_default_views() {
         'max' => '2013-12-31',
       ),
     ),
+    3 => array(
+      'title' => '2014',
+      'operator' => 'between',
+      'value' => array(
+        'type' => 'date',
+        'value' => '',
+        'min' => '2014-01-01',
+        'max' => '2014-12-31',
+      ),
+    ),
   );
 
   /* Display: Summary */
@@ -265,12 +275,15 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'views_bulk_operations' => 'views_bulk_operations',
+    'views_send' => 'views_send',
     'name' => 'name',
+    'field_fullname' => 'field_fullname',
+    'field_do_username' => 'field_do_username',
     'mail' => 'mail',
     'name_1' => 'name_1',
     'field_meal_preference' => 'field_meal_preference',
@@ -280,16 +293,31 @@ function dco_registration_views_default_views() {
     'view_registration' => 'view_registration',
     'edit_node' => 'edit_node',
     'created' => 'created',
+    'views_bulk_operations' => 'views_bulk_operations',
   );
   $handler->display->display_options['style_options']['default'] = 'created';
   $handler->display->display_options['style_options']['info'] = array(
-    'views_bulk_operations' => array(
+    'views_send' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'name' => array(
       'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_fullname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_do_username' => array(
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -354,6 +382,11 @@ function dco_registration_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   /* Header: Global: Result summary */
   $handler->display->display_options['header']['result']['id'] = 'result';
@@ -380,7 +413,6 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['fields']['views_send']['id'] = 'views_send';
   $handler->display->display_options['fields']['views_send']['table'] = 'views';
   $handler->display->display_options['fields']['views_send']['field'] = 'views_send';
-  $handler->display->display_options['fields']['views_send']['label'] = 'Send E-mail';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -578,7 +610,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2013';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'Product SKU';
@@ -624,9 +656,113 @@ function dco_registration_views_default_views() {
   $handler = $view->new_display('page', 'Overview', 'page_1');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Registration: Meal Preference (field_meal_preference) */
+  $handler->display->display_options['filters']['field_meal_preference_value']['id'] = 'field_meal_preference_value';
+  $handler->display->display_options['filters']['field_meal_preference_value']['table'] = 'field_data_field_meal_preference';
+  $handler->display->display_options['filters']['field_meal_preference_value']['field'] = 'field_meal_preference_value';
+  $handler->display->display_options['filters']['field_meal_preference_value']['group_type'] = 'count_distinct';
+  $handler->display->display_options['filters']['field_meal_preference_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_meal_preference_value']['expose']['operator_id'] = 'field_meal_preference_value_op';
+  $handler->display->display_options['filters']['field_meal_preference_value']['expose']['label'] = 'Meal Preference';
+  $handler->display->display_options['filters']['field_meal_preference_value']['expose']['operator'] = 'field_meal_preference_value_op';
+  $handler->display->display_options['filters']['field_meal_preference_value']['expose']['identifier'] = 'field_meal_preference_value';
+  $handler->display->display_options['filters']['field_meal_preference_value']['expose']['multiple'] = TRUE;
+  /* Filter criterion: Registration: T-Shirt Size (field_tshirt_size) */
+  $handler->display->display_options['filters']['field_tshirt_size_value']['id'] = 'field_tshirt_size_value';
+  $handler->display->display_options['filters']['field_tshirt_size_value']['table'] = 'field_data_field_tshirt_size';
+  $handler->display->display_options['filters']['field_tshirt_size_value']['field'] = 'field_tshirt_size_value';
+  $handler->display->display_options['filters']['field_tshirt_size_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_tshirt_size_value']['expose']['operator_id'] = 'field_tshirt_size_value_op';
+  $handler->display->display_options['filters']['field_tshirt_size_value']['expose']['label'] = 'T-Shirt Size';
+  $handler->display->display_options['filters']['field_tshirt_size_value']['expose']['operator'] = 'field_tshirt_size_value_op';
+  $handler->display->display_options['filters']['field_tshirt_size_value']['expose']['identifier'] = 'field_tshirt_size_value';
+  $handler->display->display_options['filters']['field_tshirt_size_value']['expose']['multiple'] = TRUE;
+  /* Filter criterion: Registration: Registration type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'registration';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'paid_registration' => 'paid_registration',
+  );
+  /* Filter criterion: Commerce Product: SKU */
+  $handler->display->display_options['filters']['sku']['id'] = 'sku';
+  $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
+  $handler->display->display_options['filters']['sku']['field'] = 'sku';
+  $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
+  $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
+  $handler->display->display_options['filters']['sku']['expose']['label'] = 'Product SKU';
+  $handler->display->display_options['filters']['sku']['expose']['description'] = 'e.g.: dco-YYYY';
+  $handler->display->display_options['filters']['sku']['expose']['operator'] = 'sku_op';
+  $handler->display->display_options['filters']['sku']['expose']['identifier'] = 'sku';
+  $handler->display->display_options['filters']['sku']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    7 => 0,
+    5 => 0,
+    3 => 0,
+    6 => 0,
+    8 => 0,
+    9 => 0,
+  );
+  /* Filter criterion: Registration: State entity */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'registration';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['value'] = array(
+    'complete' => 'complete',
+  );
+  $handler->display->display_options['filters']['state']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['state']['expose']['operator_id'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['label'] = 'Registration State';
+  $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
+  $handler->display->display_options['filters']['state']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    7 => 0,
+    5 => 0,
+    3 => 0,
+    6 => 0,
+    8 => 0,
+    9 => 0,
+  );
+  /* Filter criterion: User: E-mail */
+  $handler->display->display_options['filters']['mail']['id'] = 'mail';
+  $handler->display->display_options['filters']['mail']['table'] = 'users';
+  $handler->display->display_options['filters']['mail']['field'] = 'mail';
+  $handler->display->display_options['filters']['mail']['relationship'] = 'user_uid';
+  $handler->display->display_options['filters']['mail']['operator'] = 'contains';
+  $handler->display->display_options['filters']['mail']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['mail']['expose']['operator_id'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['label'] = 'E-mail';
+  $handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
+  $handler->display->display_options['filters']['mail']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    7 => 0,
+    5 => 0,
+    3 => 0,
+    6 => 0,
+    8 => 0,
+    9 => 0,
+  );
   $handler->display->display_options['path'] = 'admin/registration/overview';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Overview';
@@ -721,7 +857,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2013';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'SKU';
@@ -835,7 +971,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2013';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'SKU';
@@ -843,6 +979,27 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['expose']['operator'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['identifier'] = 'sku';
   $handler->display->display_options['filters']['sku']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    7 => 0,
+    5 => 0,
+    3 => 0,
+    6 => 0,
+    8 => 0,
+    9 => 0,
+  );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['relationship'] = 'user_uid';
+  $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Roles';
+  $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
+  $handler->display->display_options['filters']['rid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     4 => 0,
@@ -1035,7 +1192,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku_1']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku_1']['field'] = 'sku';
   $handler->display->display_options['filters']['sku_1']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku_1']['value'] = 'dco-2013';
+  $handler->display->display_options['filters']['sku_1']['value'] = 'dco-2014-2718';
   $handler->display->display_options['filters']['sku_1']['group'] = 2;
   $handler->display->display_options['filters']['sku_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku_1']['expose']['operator_id'] = 'sku_1_op';
@@ -1114,7 +1271,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2013';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'SKU';
   $handler->display->display_options['filters']['sku']['expose']['description'] = 'e.g.: dco-YYYY';
@@ -1317,12 +1474,12 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['relationships']['order_id']['id'] = 'order_id';
   $handler->display->display_options['relationships']['order_id']['table'] = 'registration';
   $handler->display->display_options['relationships']['order_id']['field'] = 'order_id';
-  /* Relationship: Commerce Order: Referenced line item */
+  /* Relationship: Commerce Order: Referenced line items */
   $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['id'] = 'commerce_line_items_line_item_id';
   $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['table'] = 'field_data_commerce_line_items';
   $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['field'] = 'commerce_line_items_line_item_id';
   $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['relationship'] = 'order_id';
-  /* Relationship: Commerce Line item: Referenced product */
+  /* Relationship: Commerce Line item: Referenced products */
   $handler->display->display_options['relationships']['commerce_product_product_id']['id'] = 'commerce_product_product_id';
   $handler->display->display_options['relationships']['commerce_product_product_id']['table'] = 'field_data_commerce_product';
   $handler->display->display_options['relationships']['commerce_product_product_id']['field'] = 'commerce_product_product_id';
@@ -1395,7 +1552,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'commerce_product_product_id';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2013';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'SKU';
@@ -1481,7 +1638,7 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['sku']['table'] = 'commerce_product';
   $handler->display->display_options['filters']['sku']['field'] = 'sku';
   $handler->display->display_options['filters']['sku']['relationship'] = 'registration_related_commerce_product';
-  $handler->display->display_options['filters']['sku']['value'] = 'dco-2013';
+  $handler->display->display_options['filters']['sku']['value'] = 'dco-2014-2718';
   $handler->display->display_options['filters']['sku']['exposed'] = TRUE;
   $handler->display->display_options['filters']['sku']['expose']['operator_id'] = 'sku_op';
   $handler->display->display_options['filters']['sku']['expose']['label'] = 'SKU';

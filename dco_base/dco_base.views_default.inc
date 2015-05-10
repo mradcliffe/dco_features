@@ -29,6 +29,10 @@ function dco_base_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   /* No results behavior: Global: Text area */
@@ -87,6 +91,7 @@ function dco_base_views_default_views() {
     'event' => 'event',
     'news' => 'news',
     'simplenews' => 'simplenews',
+    'webform' => 'webform',
   );
   $handler->display->display_options['filters']['type']['group'] = '0';
   $handler->display->display_options['filters']['type']['expose']['operator'] = FALSE;
@@ -159,19 +164,6 @@ function dco_base_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<h3>Friday</h3>
-
-You may park in either the 4-H center parking lot or in the Davis Baseball Stadium parking lot provided that you have a valid Drupal Camp Ohio parking pass displayed in your vehicle. You may print out a parking pass by logging into the site and visiting this page. All other vehicles may be subject to fines and/or towing.
-
-<h3>Saturday</h3>
-
-More information forthcoming.';
-  $handler->display->display_options['footer']['area']['format'] = '2';
   /* Relationship: Content: Attachment (field_attachment:fid) */
   $handler->display->display_options['relationships']['field_attachment_fid']['id'] = 'field_attachment_fid';
   $handler->display->display_options['relationships']['field_attachment_fid']['table'] = 'field_data_field_attachment';
@@ -203,7 +195,8 @@ More information forthcoming.';
   $handler->display->display_options['filters']['filename']['table'] = 'file_managed';
   $handler->display->display_options['filters']['filename']['field'] = 'filename';
   $handler->display->display_options['filters']['filename']['relationship'] = 'field_attachment_fid';
-  $handler->display->display_options['filters']['filename']['value'] = 'parking_permit.pdf';
+  $handler->display->display_options['filters']['filename']['operator'] = 'starts';
+  $handler->display->display_options['filters']['filename']['value'] = 'parking_permit';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');

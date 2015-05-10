@@ -13,7 +13,7 @@ function dco_sponsor_user_default_roles() {
   // Exported role: sponsor organizer.
   $roles['sponsor organizer'] = array(
     'name' => 'sponsor organizer',
-    'weight' => '0',
+    'weight' => 0,
   );
 
   return $roles;

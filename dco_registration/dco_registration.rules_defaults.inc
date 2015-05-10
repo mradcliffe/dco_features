@@ -12,8 +12,9 @@ function dco_registration_default_rules_configuration() {
   $items['rules_check_registration_on_new_account'] = entity_import('rules_config', '{ "rules_check_registration_on_new_account" : {
       "LABEL" : "Check registration on new account",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules", "commerce" ],
-      "ON" : [ "user_insert" ],
+      "ON" : { "user_insert" : [] },
       "IF" : [
         { "entity_exists" : {
             "type" : "registration",
@@ -46,9 +47,10 @@ function dco_registration_default_rules_configuration() {
   $items['rules_check_registration_ownership'] = entity_import('rules_config', '{ "rules_check_registration_ownership" : {
       "LABEL" : "Check registration ownership",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "commerce", "rules" ],
-      "ON" : [ "cron" ],
+      "ON" : { "cron" : [] },
       "IF" : [
         { "entity_exists" : { "type" : "registration", "property" : "author_uid", "value" : "0" } }
       ],
@@ -82,9 +84,10 @@ function dco_registration_default_rules_configuration() {
   $items['rules_check_registration_state'] = entity_import('rules_config', '{ "rules_check_registration_state" : {
       "LABEL" : "Check Registration State",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "commerce", "rules" ],
-      "ON" : [ "cron" ],
+      "ON" : { "cron" : [] },
       "IF" : [
         { "entity_exists" : { "type" : "registration", "property" : "state", "value" : "pending" } }
       ],
@@ -114,6 +117,7 @@ function dco_registration_default_rules_configuration() {
       "LABEL" : "Create Account for Anonymous Registration",
       "PLUGIN" : "reaction rule",
       "WEIGHT" : "6",
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [
         "rules",
@@ -122,7 +126,7 @@ function dco_registration_default_rules_configuration() {
         "commerce_checkout",
         "registration"
       ],
-      "ON" : [ "registration_update" ],
+      "ON" : { "registration_update" : [] },
       "IF" : [
         { "data_is" : { "data" : [ "registration:state" ], "value" : "complete" } },
         { "NOT data_is_empty" : { "data" : [ "registration:anon-mail" ] } },
@@ -165,9 +169,10 @@ function dco_registration_default_rules_configuration() {
       "LABEL" : "Reconcile registration accounts",
       "PLUGIN" : "reaction rule",
       "WEIGHT" : "6",
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules", "commerce", "simplenews_rules", "registration" ],
-      "ON" : [ "registration_update" ],
+      "ON" : { "registration_update" : [] },
       "IF" : [
         { "data_is" : { "data" : [ "registration:state" ], "value" : "complete" } },
         { "NOT data_is_empty" : { "data" : [ "registration:anon-mail" ] } },
@@ -203,6 +208,7 @@ function dco_registration_default_rules_configuration() {
   $items['rules_reconcile_registration_owner'] = entity_import('rules_config', '{ "rules_reconcile_registration_owner" : {
       "LABEL" : "Reconcile registration owner",
       "PLUGIN" : "action set",
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
@@ -218,6 +224,7 @@ function dco_registration_default_rules_configuration() {
   $items['rules_reconcile_registration_state'] = entity_import('rules_config', '{ "rules_reconcile_registration_state" : {
       "LABEL" : "Reconcile Registration State",
       "PLUGIN" : "rule",
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules", "commerce_order" ],
       "USES VARIABLES" : {
@@ -243,6 +250,7 @@ function dco_registration_default_rules_configuration() {
   $items['rules_reconcile_user_account_to_registration'] = entity_import('rules_config', '{ "rules_reconcile_user_account_to_registration" : {
       "LABEL" : "Reconcile user account to registration",
       "PLUGIN" : "action set",
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : {
         "registration" : { "label" : "Registration", "type" : "registration" },
@@ -258,9 +266,10 @@ function dco_registration_default_rules_configuration() {
   $items['rules_redirect_to_cart_after_adding_to_cart'] = entity_import('rules_config', '{ "rules_redirect_to_cart_after_adding_to_cart" : {
       "LABEL" : "Redirect to cart after adding to cart",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "rules", "commerce_cart" ],
-      "ON" : [ "commerce_cart_product_add" ],
+      "ON" : { "commerce_cart_product_add" : [] },
       "DO" : [ { "redirect" : { "url" : "cart" } } ]
     }
   }');

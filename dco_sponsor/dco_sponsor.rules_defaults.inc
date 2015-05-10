@@ -13,8 +13,9 @@ function dco_sponsor_default_rules_configuration() {
       "LABEL" : "Add registration for individual sponsorship",
       "PLUGIN" : "reaction rule",
       "WEIGHT" : "6",
+      "OWNER" : "rules",
       "REQUIRES" : [ "commerce_order", "commerce_cart" ],
-      "ON" : [ "commerce_cart_product_add" ],
+      "ON" : { "commerce_cart_product_add" : [] },
       "IF" : [
         { "commerce_order_contains_product" : {
             "commerce_order" : [ "commerce_order" ],
@@ -25,7 +26,7 @@ function dco_sponsor_default_rules_configuration() {
         },
         { "NOT commerce_order_contains_product" : {
             "commerce_order" : [ "commerce_order" ],
-            "product_id" : "dco-2013",
+            "product_id" : "dco-2014",
             "operator" : "\\u003E=",
             "value" : "1"
           }
@@ -35,7 +36,7 @@ function dco_sponsor_default_rules_configuration() {
         { "commerce_cart_product_add_by_sku" : {
             "USING" : {
               "user" : [ "commerce-line-item:order:owner" ],
-              "sku" : "dco-2013",
+              "sku" : "dco-2014",
               "quantity" : "1",
               "combine" : 1
             },
@@ -48,6 +49,7 @@ function dco_sponsor_default_rules_configuration() {
   $items['rules_discount_registration_with_individual_sponsorship'] = entity_import('rules_config', '{ "rules_discount_registration_with_individual_sponsorship" : {
       "LABEL" : "Discount registration with individual sponsorship",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "REQUIRES" : [
         "commerce_registration",
         "commerce_order",
@@ -55,7 +57,7 @@ function dco_sponsor_default_rules_configuration() {
         "commerce_line_item",
         "commerce_product_reference"
       ],
-      "ON" : [ "commerce_product_calculate_sell_price" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
       "IF" : [
         { "commerce_registration_item_has_registration_capacity" : { "commerce_line_item" : [ "commerce_line_item" ] } },
         { "commerce_order_contains_product" : {
@@ -107,6 +109,7 @@ function dco_sponsor_default_rules_configuration() {
   $items['rules_notify_of_sponsor_purchase'] = entity_import('rules_config', '{ "rules_notify_of_sponsor_purchase" : {
       "LABEL" : "Notify of sponsor purchase",
       "PLUGIN" : "rule",
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "commerce_order", "rules" ],
       "USES VARIABLES" : { "order" : { "label" : "Order", "type" : "commerce_order" } },
@@ -157,9 +160,10 @@ function dco_sponsor_default_rules_configuration() {
   $items['rules_reduce_quantity_to_one'] = entity_import('rules_config', '{ "rules_reduce_quantity_to_one" : {
       "LABEL" : "Reduce quantity to one",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "TAGS" : [ "dco" ],
       "REQUIRES" : [ "commerce_order", "rules", "entity" ],
-      "ON" : [ "commerce_line_item_update" ],
+      "ON" : { "commerce_line_item_update" : [] },
       "IF" : [
         { "OR" : [
             { "commerce_order_contains_product" : {

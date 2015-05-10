@@ -14,7 +14,7 @@ function dco_registration_commerce_product_default_types() {
       'name' => 'Ticket',
       'description' => 'A registration or ticket for an event.',
       'help' => '',
-      'revision' => '1',
+      'revision' => 1,
     ),
   );
   return $items;
@@ -23,8 +23,7 @@ function dco_registration_commerce_product_default_types() {
 /**
  * Implements hook_ctools_plugin_api().
  */
-function dco_registration_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function dco_registration_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -33,8 +32,8 @@ function dco_registration_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function dco_registration_views_api() {
-  return array("version" => "3.0");
+function dco_registration_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**
@@ -51,6 +50,7 @@ function dco_registration_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
 
@@ -65,6 +65,7 @@ function dco_registration_default_registration_state() {
     "description" : "Registration was cancelled",
     "default_state" : "0",
     "active" : "1",
+    "held" : "0",
     "show_on_form" : "1",
     "weight" : "1"
   }');
@@ -74,6 +75,7 @@ function dco_registration_default_registration_state() {
     "description" : "Registration has been completed.",
     "default_state" : "0",
     "active" : "1",
+    "held" : "0",
     "show_on_form" : "1",
     "weight" : "1"
   }');
@@ -83,6 +85,7 @@ function dco_registration_default_registration_state() {
     "description" : "Registration is pending.",
     "default_state" : "1",
     "active" : "1",
+    "held" : "0",
     "show_on_form" : "1",
     "weight" : "1"
   }');
@@ -94,19 +97,13 @@ function dco_registration_default_registration_state() {
  */
 function dco_registration_default_registration_type() {
   $items = array();
-  $items['free_registration'] = entity_import('registration_type', '{
-    "name" : "free_registration",
-    "label" : "Free Registration",
-    "locked" : "0",
-    "weight" : "0",
-    "data" : null
-  }');
   $items['paid_registration'] = entity_import('registration_type', '{
     "name" : "paid_registration",
     "label" : "Paid Registration",
     "locked" : "0",
-    "weight" : "0",
-    "data" : null
+    "default_state" : "",
+    "data" : null,
+    "weight" : "0"
   }');
   return $items;
 }
