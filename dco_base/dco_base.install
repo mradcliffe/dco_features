@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * DCO Base install routines.
+ */
+
+/**
+ * 7100: Remove unused modules from {system} table.
+ */
+function dco_base_update_7100() {
+  $num = db_query("DELETE FROM {system} WHERE name IN ('checkbox_validate', 'cod', 'cod_base', 'cod_community', 'cod_events', 'cod_front_page', 'cod_news', 'cod_session', 'cod_sponsors', 'cod_sponsor_sales', 'content', 'content_permissions', 'date_timezone', 'dconodeaccess', 'dcosignup', 'fasttoggle', 'fieldgroup', 'filefield', 'imagecache_ui', 'imagefield', 'nodereference', 'optionwidgets', 'signup_profile', 'userreference', 'vertical_tabs', 'views_clone_display', 'views_groupby', 'views_php', 'views_slideshow')")->execute();
+
+  return format_plural($num, 'Removed 1 module from system table', 'Remove @count modules from system table');
+}
