@@ -33,7 +33,7 @@ function dco_session_flag_default_flags() {
   $flags = array();
   // Exported flag: "Speaker confirmation flag".
   $flags['session_confirm'] = array(
-    'content_type' => 'node',
+    'entity_type' => 'node',
     'title' => 'Speaker confirmation flag',
     'global' => 0,
     'types' => array(
@@ -47,31 +47,27 @@ function dco_session_flag_default_flags() {
     'unflag_message' => '',
     'unflag_denied_text' => 'You have confirmed that you will be presenting for this session.',
     'link_type' => 'toggle',
-    'roles' => array(
-      'flag' => array(),
-      'unflag' => array(),
-    ),
     'weight' => 0,
-    'show_on_form' => 0,
+    'show_in_links' => array(),
+    'show_as_field' => FALSE,
+    'show_on_form' => FALSE,
     'access_author' => '',
-    'show_on_page' => 0,
-    'show_on_teaser' => 0,
     'show_contextual_link' => FALSE,
     'i18n' => 0,
+    'api_version' => 3,
     'module' => 'dco_session',
     'locked' => array(
       0 => 'name',
     ),
-    'api_version' => 2,
   );
   // Exported flag: "Session Attending".
   $flags['session_schedule'] = array(
-    'content_type' => 'node',
+    'entity_type' => 'node',
     'title' => 'Session Attending',
     'global' => 0,
     'types' => array(
-      0 => 'session',
-      1 => 'schedule_item',
+      0 => 'schedule_item',
+      1 => 'session',
     ),
     'flag_short' => 'Add to your schedule',
     'flag_long' => 'Add this session to your personal session attendance.',
@@ -81,26 +77,22 @@ function dco_session_flag_default_flags() {
     'unflag_message' => 'Session removed',
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
-    'roles' => array(
-      'flag' => array(),
-      'unflag' => array(),
-    ),
     'weight' => 0,
-    'show_on_form' => 0,
+    'show_in_links' => array(),
+    'show_as_field' => FALSE,
+    'show_on_form' => FALSE,
     'access_author' => '',
-    'show_on_page' => 0,
-    'show_on_teaser' => 1,
     'show_contextual_link' => FALSE,
     'i18n' => 0,
+    'api_version' => 3,
     'module' => 'dco_session',
     'locked' => array(
       0 => 'name',
     ),
-    'api_version' => 2,
   );
   // Exported flag: "Session Vote".
   $flags['session_vote'] = array(
-    'content_type' => 'node',
+    'entity_type' => 'node',
     'title' => 'Session Vote',
     'global' => 0,
     'types' => array(
@@ -114,28 +106,18 @@ function dco_session_flag_default_flags() {
     'unflag_message' => 'Your preference has been recorded!',
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
-    'roles' => array(
-      'flag' => array(
-        0 => 2,
-        1 => 3,
-      ),
-      'unflag' => array(
-        0 => 2,
-        1 => 3,
-      ),
-    ),
     'weight' => 0,
-    'show_on_form' => 0,
+    'show_in_links' => array(),
+    'show_as_field' => FALSE,
+    'show_on_form' => FALSE,
     'access_author' => '',
-    'show_on_page' => 1,
-    'show_on_teaser' => 0,
     'show_contextual_link' => FALSE,
     'i18n' => 0,
     'module' => 'dco_session',
     'locked' => array(
       0 => 'name',
     ),
-    'api_version' => 2,
+    'api_version' => 3,
   );
   return $flags;
 

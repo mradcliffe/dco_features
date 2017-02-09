@@ -10,7 +10,7 @@
 function dco_sponsor_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'commerce_stock'
+  // Exported field_base: 'commerce_stock'.
   $field_bases['commerce_stock'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -27,7 +27,7 @@ function dco_sponsor_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'commerce_stock_override'
+  // Exported field_base: 'commerce_stock_override'.
   $field_bases['commerce_stock_override'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -54,7 +54,7 @@ function dco_sponsor_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_logo'
+  // Exported field_base: 'field_logo'.
   $field_bases['field_logo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -84,7 +84,7 @@ function dco_sponsor_field_default_field_bases() {
     'type_name' => 'sponsor',
   );
 
-  // Exported field_base: 'field_related_attendees'
+  // Exported field_base: 'field_related_attendees'.
   $field_bases['field_related_attendees'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -118,7 +118,7 @@ function dco_sponsor_field_default_field_bases() {
     'type_name' => 'sponsor',
   );
 
-  // Exported field_base: 'field_sponsorship_level'
+  // Exported field_base: 'field_sponsorship_level'.
   $field_bases['field_sponsorship_level'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -156,7 +156,7 @@ function dco_sponsor_field_default_field_bases() {
     'type_name' => 'sponsorship',
   );
 
-  // Exported field_base: 'field_url'
+  // Exported field_base: 'field_url'.
   $field_bases['field_url'] = array(
     'active' => 1,
     'cardinality' => 1,

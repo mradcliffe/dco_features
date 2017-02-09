@@ -10,7 +10,7 @@
 function dco_registration_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'commerce_product-ticket-commerce_price'
+  // Exported field_instance: 'commerce_product-ticket-commerce_price'.
   $field_instances['commerce_product-ticket-commerce_price'] = array(
     'bundle' => 'ticket',
     'default_value' => NULL,
@@ -125,7 +125,7 @@ function dco_registration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-ticket-field_registration_type'
+  // Exported field_instance: 'commerce_product-ticket-field_registration_type'.
   $field_instances['commerce_product-ticket-field_registration_type'] = array(
     'bundle' => 'ticket',
     'default_value' => array(
@@ -192,7 +192,7 @@ function dco_registration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-body'
+  // Exported field_instance: 'node-event-body'.
   $field_instances['node-event-body'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -236,7 +236,7 @@ function dco_registration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_dates'
+  // Exported field_instance: 'node-event-field_dates'.
   $field_instances['node-event-field_dates'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -257,6 +257,7 @@ function dco_registration_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -271,6 +272,7 @@ function dco_registration_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -291,6 +293,7 @@ function dco_registration_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -328,7 +331,7 @@ function dco_registration_field_default_field_instances() {
     'widget_type' => 'date_popup',
   );
 
-  // Exported field_instance: 'node-event-field_image_cache'
+  // Exported field_instance: 'node-event-field_image_cache'.
   $field_instances['node-event-field_image_cache'] = array(
     'bundle' => 'event',
     'default_value' => '',
@@ -390,7 +393,7 @@ function dco_registration_field_default_field_instances() {
     'widget_type' => 'imagefield_widget',
   );
 
-  // Exported field_instance: 'node-event-field_product_reference'
+  // Exported field_instance: 'node-event-field_product_reference'.
   $field_instances['node-event-field_product_reference'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -449,7 +452,7 @@ function dco_registration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'registration-paid_registration-field_allergies'
+  // Exported field_instance: 'registration-paid_registration-field_allergies'.
   $field_instances['registration-paid_registration-field_allergies'] = array(
     'bundle' => 'paid_registration',
     'default_value' => NULL,
@@ -489,7 +492,7 @@ function dco_registration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'registration-paid_registration-field_attendance'
+  // Exported field_instance: 'registration-paid_registration-field_attendance'.
   $field_instances['registration-paid_registration-field_attendance'] = array(
     'bundle' => 'paid_registration',
     'default_value' => NULL,
@@ -528,7 +531,8 @@ function dco_registration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'registration-paid_registration-field_do_username'
+  // Exported field_instance:
+  // 'registration-paid_registration-field_do_username'.
   $field_instances['registration-paid_registration-field_do_username'] = array(
     'bundle' => 'paid_registration',
     'default_value' => NULL,
@@ -568,7 +572,7 @@ function dco_registration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'registration-paid_registration-field_fullname'
+  // Exported field_instance: 'registration-paid_registration-field_fullname'.
   $field_instances['registration-paid_registration-field_fullname'] = array(
     'bundle' => 'paid_registration',
     'default_value' => NULL,
@@ -609,7 +613,7 @@ function dco_registration_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'registration-paid_registration-field_meal_preference'
+  // 'registration-paid_registration-field_meal_preference'.
   $field_instances['registration-paid_registration-field_meal_preference'] = array(
     'bundle' => 'paid_registration',
     'default_value' => array(
@@ -653,7 +657,7 @@ function dco_registration_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'registration-paid_registration-field_special_request'
+  // 'registration-paid_registration-field_special_request'.
   $field_instances['registration-paid_registration-field_special_request'] = array(
     'bundle' => 'paid_registration',
     'default_value' => NULL,
@@ -693,7 +697,8 @@ function dco_registration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'registration-paid_registration-field_tshirt_size'
+  // Exported field_instance:
+  // 'registration-paid_registration-field_tshirt_size'.
   $field_instances['registration-paid_registration-field_tshirt_size'] = array(
     'bundle' => 'paid_registration',
     'default_value' => NULL,

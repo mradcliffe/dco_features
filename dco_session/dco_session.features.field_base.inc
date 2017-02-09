@@ -10,7 +10,7 @@
 function dco_session_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_accepted'
+  // Exported field_base: 'field_accepted'.
   $field_bases['field_accepted'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -48,7 +48,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'session',
   );
 
-  // Exported field_base: 'field_experience'
+  // Exported field_base: 'field_experience'.
   $field_bases['field_experience'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -81,7 +81,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'session',
   );
 
-  // Exported field_base: 'field_featured'
+  // Exported field_base: 'field_featured'.
   $field_bases['field_featured'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -119,7 +119,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'session',
   );
 
-  // Exported field_base: 'field_marketing_image'
+  // Exported field_base: 'field_marketing_image'.
   $field_bases['field_marketing_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -152,7 +152,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'session',
   );
 
-  // Exported field_base: 'field_room_capacity'
+  // Exported field_base: 'field_room_capacity'.
   $field_bases['field_room_capacity'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -181,7 +181,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'room',
   );
 
-  // Exported field_base: 'field_room_photo'
+  // Exported field_base: 'field_room_photo'.
   $field_bases['field_room_photo'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -211,7 +211,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'room',
   );
 
-  // Exported field_base: 'field_room_session_capacity'
+  // Exported field_base: 'field_room_session_capacity'.
   $field_bases['field_room_session_capacity'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -238,7 +238,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'room',
   );
 
-  // Exported field_base: 'field_session_length'
+  // Exported field_base: 'field_session_length'.
   $field_bases['field_session_length'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -269,7 +269,7 @@ function dco_session_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_session_room'
+  // Exported field_base: 'field_session_room'.
   $field_bases['field_session_room'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -319,7 +319,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'session',
   );
 
-  // Exported field_base: 'field_session_slot'
+  // Exported field_base: 'field_session_slot'.
   $field_bases['field_session_slot'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -368,7 +368,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'session',
   );
 
-  // Exported field_base: 'field_session_video_url'
+  // Exported field_base: 'field_session_video_url'.
   $field_bases['field_session_video_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -400,7 +400,7 @@ function dco_session_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_slides'
+  // Exported field_base: 'field_slides'.
   $field_bases['field_slides'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -432,7 +432,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'session',
   );
 
-  // Exported field_base: 'field_slot_datetime'
+  // Exported field_base: 'field_slot_datetime'.
   $field_bases['field_slot_datetime'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -464,7 +464,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'time_slot',
   );
 
-  // Exported field_base: 'field_speakers'
+  // Exported field_base: 'field_speakers'.
   $field_bases['field_speakers'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -551,7 +551,7 @@ function dco_session_field_default_field_bases() {
     'type_name' => 'session',
   );
 
-  // Exported field_base: 'field_track'
+  // Exported field_base: 'field_track'.
   $field_bases['field_track'] = array(
     'active' => 1,
     'cardinality' => 1,

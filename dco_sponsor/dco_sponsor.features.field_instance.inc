@@ -10,7 +10,7 @@
 function dco_sponsor_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'commerce_product-product-commerce_price'
+  // Exported field_instance: 'commerce_product-product-commerce_price'.
   $field_instances['commerce_product-product-commerce_price'] = array(
     'bundle' => 'product',
     'default_value' => NULL,
@@ -89,7 +89,7 @@ function dco_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-product-commerce_stock'
+  // Exported field_instance: 'commerce_product-product-commerce_stock'.
   $field_instances['commerce_product-product-commerce_stock'] = array(
     'bundle' => 'product',
     'default_value' => array(
@@ -144,7 +144,8 @@ function dco_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-product-commerce_stock_override'
+  // Exported field_instance:
+  // 'commerce_product-product-commerce_stock_override'.
   $field_instances['commerce_product-product-commerce_stock_override'] = array(
     'bundle' => 'product',
     'default_value' => array(
@@ -192,7 +193,7 @@ function dco_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product-body'
+  // Exported field_instance: 'node-product-body'.
   $field_instances['node-product-body'] = array(
     'bundle' => 'product',
     'default_value' => NULL,
@@ -236,7 +237,7 @@ function dco_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product-field_image_cache'
+  // Exported field_instance: 'node-product-field_image_cache'.
   $field_instances['node-product-field_image_cache'] = array(
     'bundle' => 'product',
     'default_value' => '',
@@ -306,7 +307,7 @@ function dco_sponsor_field_default_field_instances() {
     'widget_type' => 'imagefield_widget',
   );
 
-  // Exported field_instance: 'node-product-field_product_reference'
+  // Exported field_instance: 'node-product-field_product_reference'.
   $field_instances['node-product-field_product_reference'] = array(
     'bundle' => 'product',
     'default_value' => NULL,
@@ -364,7 +365,7 @@ function dco_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-body'
+  // Exported field_instance: 'node-sponsor-body'.
   $field_instances['node-sponsor-body'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -409,7 +410,7 @@ function dco_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_event'
+  // Exported field_instance: 'node-sponsor-field_event'.
   $field_instances['node-sponsor-field_event'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -418,9 +419,8 @@ function dco_sponsor_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'node_reference',
         'settings' => array(),
-        'type' => 'node_reference_plain',
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -450,7 +450,7 @@ function dco_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_logo'
+  // Exported field_instance: 'node-sponsor-field_logo'.
   $field_instances['node-sponsor-field_logo'] = array(
     'bundle' => 'sponsor',
     'default_value' => '',
@@ -538,7 +538,7 @@ function dco_sponsor_field_default_field_instances() {
     'widget_type' => 'imagefield_widget',
   );
 
-  // Exported field_instance: 'node-sponsor-field_related_attendees'
+  // Exported field_instance: 'node-sponsor-field_related_attendees'.
   $field_instances['node-sponsor-field_related_attendees'] = array(
     'bundle' => 'sponsor',
     'default_value' => array(
@@ -610,7 +610,7 @@ function dco_sponsor_field_default_field_instances() {
     'widget_type' => 'userreference_autocomplete',
   );
 
-  // Exported field_instance: 'node-sponsor-field_sponsorship_level'
+  // Exported field_instance: 'node-sponsor-field_sponsorship_level'.
   $field_instances['node-sponsor-field_sponsorship_level'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -674,7 +674,7 @@ function dco_sponsor_field_default_field_instances() {
     'widget_type' => 'optionwidgets_select',
   );
 
-  // Exported field_instance: 'node-sponsor-field_url'
+  // Exported field_instance: 'node-sponsor-field_url'.
   $field_instances['node-sponsor-field_url'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -715,6 +715,7 @@ function dco_sponsor_field_default_field_instances() {
     'label' => 'URL',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -727,6 +728,7 @@ function dco_sponsor_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'optional',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,

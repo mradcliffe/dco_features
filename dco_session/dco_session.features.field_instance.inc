@@ -10,7 +10,7 @@
 function dco_session_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-room-body'
+  // Exported field_instance: 'node-room-body'.
   $field_instances['node-room-body'] = array(
     'bundle' => 'room',
     'default_value' => NULL,
@@ -55,7 +55,7 @@ function dco_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-room-field_room_capacity'
+  // Exported field_instance: 'node-room-field_room_capacity'.
   $field_instances['node-room-field_room_capacity'] = array(
     'bundle' => 'room',
     'default_value' => '',
@@ -136,7 +136,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'text_textfield',
   );
 
-  // Exported field_instance: 'node-room-field_room_photo'
+  // Exported field_instance: 'node-room-field_room_photo'.
   $field_instances['node-room-field_room_photo'] = array(
     'bundle' => 'room',
     'default_value' => '',
@@ -240,7 +240,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'imagefield_widget',
   );
 
-  // Exported field_instance: 'node-room-field_room_session_capacity'
+  // Exported field_instance: 'node-room-field_room_session_capacity'.
   $field_instances['node-room-field_room_session_capacity'] = array(
     'bundle' => 'room',
     'default_value' => array(
@@ -349,7 +349,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'number',
   );
 
-  // Exported field_instance: 'node-schedule_item-body'
+  // Exported field_instance: 'node-schedule_item-body'.
   $field_instances['node-schedule_item-body'] = array(
     'bundle' => 'schedule_item',
     'default_value' => NULL,
@@ -361,7 +361,7 @@ function dco_session_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -394,7 +394,7 @@ function dco_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-schedule_item-field_accepted'
+  // Exported field_instance: 'node-schedule_item-field_accepted'.
   $field_instances['node-schedule_item-field_accepted'] = array(
     'bundle' => 'schedule_item',
     'default_value' => array(
@@ -484,7 +484,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'optionwidgets_buttons',
   );
 
-  // Exported field_instance: 'node-schedule_item-field_event'
+  // Exported field_instance: 'node-schedule_item-field_event'.
   $field_instances['node-schedule_item-field_event'] = array(
     'bundle' => 'schedule_item',
     'default_value' => NULL,
@@ -520,7 +520,7 @@ function dco_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-schedule_item-field_session_room'
+  // Exported field_instance: 'node-schedule_item-field_session_room'.
   $field_instances['node-schedule_item-field_session_room'] = array(
     'bundle' => 'schedule_item',
     'default_value' => array(
@@ -603,7 +603,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'nodereference_buttons',
   );
 
-  // Exported field_instance: 'node-schedule_item-field_session_slot'
+  // Exported field_instance: 'node-schedule_item-field_session_slot'.
   $field_instances['node-schedule_item-field_session_slot'] = array(
     'bundle' => 'schedule_item',
     'default_value' => NULL,
@@ -615,7 +615,7 @@ function dco_session_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'inline',
@@ -678,7 +678,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'nodereference_select',
   );
 
-  // Exported field_instance: 'node-session-body'
+  // Exported field_instance: 'node-session-body'.
   $field_instances['node-session-body'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -722,7 +722,7 @@ function dco_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_accepted'
+  // Exported field_instance: 'node-session-field_accepted'.
   $field_instances['node-session-field_accepted'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -802,7 +802,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'optionwidgets_buttons',
   );
 
-  // Exported field_instance: 'node-session-field_event'
+  // Exported field_instance: 'node-session-field_event'.
   $field_instances['node-session-field_event'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -842,7 +842,7 @@ function dco_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_experience'
+  // Exported field_instance: 'node-session-field_experience'.
   $field_instances['node-session-field_experience'] = array(
     'bundle' => 'session',
     'default_value' => array(
@@ -924,7 +924,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'optionwidgets_buttons',
   );
 
-  // Exported field_instance: 'node-session-field_featured'
+  // Exported field_instance: 'node-session-field_featured'.
   $field_instances['node-session-field_featured'] = array(
     'bundle' => 'session',
     'default_value' => array(
@@ -1034,7 +1034,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'optionwidgets_onoff',
   );
 
-  // Exported field_instance: 'node-session-field_marketing_image'
+  // Exported field_instance: 'node-session-field_marketing_image'.
   $field_instances['node-session-field_marketing_image'] = array(
     'bundle' => 'session',
     'default_value' => '',
@@ -1133,7 +1133,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'imagefield_widget',
   );
 
-  // Exported field_instance: 'node-session-field_registration_type'
+  // Exported field_instance: 'node-session-field_registration_type'.
   $field_instances['node-session-field_registration_type'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -1145,7 +1145,7 @@ function dco_session_field_default_field_instances() {
         'module' => 'registration',
         'settings' => array(),
         'type' => 'registration_form',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1190,7 +1190,7 @@ function dco_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_session_length'
+  // Exported field_instance: 'node-session-field_session_length'.
   $field_instances['node-session-field_session_length'] = array(
     'bundle' => 'session',
     'default_value' => array(
@@ -1203,10 +1203,9 @@ function dco_session_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1231,7 +1230,7 @@ function dco_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_session_room'
+  // Exported field_instance: 'node-session-field_session_room'.
   $field_instances['node-session-field_session_room'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -1305,7 +1304,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'nodereference_buttons',
   );
 
-  // Exported field_instance: 'node-session-field_session_slot'
+  // Exported field_instance: 'node-session-field_session_slot'.
   $field_instances['node-session-field_session_slot'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -1379,7 +1378,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'nodereference_select',
   );
 
-  // Exported field_instance: 'node-session-field_session_video_url'
+  // Exported field_instance: 'node-session-field_session_video_url'.
   $field_instances['node-session-field_session_video_url'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -1391,7 +1390,7 @@ function dco_session_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1405,6 +1404,7 @@ function dco_session_field_default_field_instances() {
     'label' => 'Session Video URL',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -1417,6 +1417,7 @@ function dco_session_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'value',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => 'Session video',
       'url' => 0,
@@ -1432,7 +1433,7 @@ function dco_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_slides'
+  // Exported field_instance: 'node-session-field_slides'.
   $field_instances['node-session-field_slides'] = array(
     'bundle' => 'session',
     'default_value' => '',
@@ -1444,7 +1445,7 @@ function dco_session_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
@@ -1512,7 +1513,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'filefield_widget',
   );
 
-  // Exported field_instance: 'node-session-field_speakers'
+  // Exported field_instance: 'node-session-field_speakers'.
   $field_instances['node-session-field_speakers'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -1577,7 +1578,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'userreference_autocomplete',
   );
 
-  // Exported field_instance: 'node-session-field_track'
+  // Exported field_instance: 'node-session-field_track'.
   $field_instances['node-session-field_track'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -1639,7 +1640,7 @@ function dco_session_field_default_field_instances() {
     'widget_type' => 'optionwidgets_buttons',
   );
 
-  // Exported field_instance: 'node-time_slot-field_slot_datetime'
+  // Exported field_instance: 'node-time_slot-field_slot_datetime'.
   $field_instances['node-time_slot-field_slot_datetime'] = array(
     'bundle' => 'time_slot',
     'deleted' => 0,
@@ -1654,6 +1655,7 @@ function dco_session_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -1668,6 +1670,7 @@ function dco_session_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -1682,6 +1685,7 @@ function dco_session_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -1696,6 +1700,7 @@ function dco_session_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -1710,6 +1715,7 @@ function dco_session_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -1724,6 +1730,7 @@ function dco_session_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -1738,6 +1745,7 @@ function dco_session_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',

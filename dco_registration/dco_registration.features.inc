@@ -101,9 +101,9 @@ function dco_registration_default_registration_type() {
     "name" : "paid_registration",
     "label" : "Paid Registration",
     "locked" : "0",
-    "default_state" : "",
-    "data" : null,
-    "weight" : "0"
+    "default_state" : "pending",
+    "weight" : "0",
+    "data" : { "held_expire" : "1", "held_expire_state" : "canceled" }
   }');
   return $items;
 }

@@ -10,7 +10,7 @@
 function dco_base_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-news-body'
+  // Exported field_instance: 'node-news-body'.
   $field_instances['node-news-body'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -55,7 +55,7 @@ function dco_base_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-webform-body'
+  // Exported field_instance: 'node-webform-body'.
   $field_instances['node-webform-body'] = array(
     'bundle' => 'webform',
     'default_value' => NULL,
@@ -100,7 +100,7 @@ function dco_base_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-webform-field_event'
+  // Exported field_instance: 'node-webform-field_event'.
   $field_instances['node-webform-field_event'] = array(
     'bundle' => 'webform',
     'default_value' => NULL,
@@ -108,10 +108,9 @@ function dco_base_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'node_reference',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'node_reference_default',
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'teaser' => array(

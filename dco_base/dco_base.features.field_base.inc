@@ -10,7 +10,7 @@
 function dco_base_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,10 +31,10 @@ function dco_base_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_event'
+  // Exported field_base: 'field_event'.
   $field_bases['field_event'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event',
@@ -52,6 +52,7 @@ function dco_base_field_default_field_bases() {
       'referenceable_types' => array(
         'bof' => 0,
         'event' => 'event',
+        'ignite' => 0,
         'invoice' => 0,
         'news' => 0,
         'page' => 0,
@@ -62,7 +63,6 @@ function dco_base_field_default_field_bases() {
         'session' => 0,
         'simplenews' => 0,
         'sponsor' => 0,
-        'sprint' => 0,
         'time_slot' => 0,
         'webform' => 0,
       ),

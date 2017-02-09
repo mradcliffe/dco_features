@@ -295,8 +295,7 @@ Please refer to our <a href="/sponsors/benefits">Sponsor Benefits</a> page to be
   $handler->display->display_options['title'] = 'Gold Sponsor';
   $handler->display->display_options['display_description'] = 'Ordered Gold Sponsors';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */

@@ -106,7 +106,8 @@ function dco_registration_default_rules_configuration() {
                   "PROVIDE" : { "entity_fetched" : { "order" : "Order" } }
                 }
               },
-              { "component_rules_reconcile_registration_state" : { "registration" : [ "registration" ], "order" : [ "order" ] } }
+              { "component_rules_reconcile_registration_state" : { "registration" : [ "registration" ], "order" : [ "order" ] } },
+              { "component_rules_remove_old_bad_orders" : { "order" : [ "order" ] } }
             ]
           }
         }
@@ -271,6 +272,42 @@ function dco_registration_default_rules_configuration() {
       "REQUIRES" : [ "rules", "commerce_cart" ],
       "ON" : { "commerce_cart_product_add" : [] },
       "DO" : [ { "redirect" : { "url" : "cart" } } ]
+    }
+  }');
+  $items['rules_remove_old_bad_orders'] = entity_import('rules_config', '{ "rules_remove_old_bad_orders" : {
+      "LABEL" : "Remove Old, Bad Orders",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "commerce_order", "commerce_registration" ],
+      "USES VARIABLES" : { "order" : { "label" : "Order", "type" : "commerce_order" } },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "order:state" ],
+            "op" : "IN",
+            "value" : { "value" : { "canceled" : "canceled", "checkout" : "checkout" } }
+          }
+        },
+        { "NOT data_is" : { "data" : [ "order:status" ], "value" : "checkout_payment" } },
+        { "NOT data_is" : { "data" : [ "order:status" ], "value" : "checkout_complete" } },
+        { "commerce_order_contains_product_type" : {
+            "commerce_order" : [ "order" ],
+            "product_type" : { "value" : { "ticket" : "ticket" } },
+            "operator" : "\\u003E=",
+            "value" : "1"
+          }
+        },
+        { "data_is" : {
+            "data" : [ "order:changed" ],
+            "op" : "\\u003E",
+            "value" : { "select" : "order:changed", "date_offset" : { "value" : 5400 } }
+          }
+        }
+      ],
+      "DO" : [
+        { "commerce_registration_delete_registrations" : { "commerce_order" : [ "order" ] } },
+        { "data_set" : { "data" : [ "order:status" ], "value" : "cart" } },
+        { "entity_save" : { "data" : [ "order" ] } }
+      ]
     }
   }');
   return $items;

@@ -10,7 +10,7 @@
 function dco_registration_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'commerce_price'
+  // Exported field_base: 'commerce_price'.
   $field_bases['commerce_price'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -32,7 +32,7 @@ function dco_registration_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'field_allergies'
+  // Exported field_base: 'field_allergies'.
   $field_bases['field_allergies'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -56,7 +56,7 @@ function dco_registration_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_attendance'
+  // Exported field_base: 'field_attendance'.
   $field_bases['field_attendance'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -86,7 +86,7 @@ function dco_registration_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_dates'
+  // Exported field_base: 'field_dates'.
   $field_bases['field_dates'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -118,7 +118,7 @@ function dco_registration_field_default_field_bases() {
     'type_name' => 'event',
   );
 
-  // Exported field_base: 'field_do_username'
+  // Exported field_base: 'field_do_username'.
   $field_bases['field_do_username'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -142,7 +142,7 @@ function dco_registration_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_fullname'
+  // Exported field_base: 'field_fullname'.
   $field_bases['field_fullname'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -166,7 +166,7 @@ function dco_registration_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_image_cache'
+  // Exported field_base: 'field_image_cache'.
   $field_bases['field_image_cache'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -196,7 +196,7 @@ function dco_registration_field_default_field_bases() {
     'type_name' => 'product',
   );
 
-  // Exported field_base: 'field_meal_preference'
+  // Exported field_base: 'field_meal_preference'.
   $field_bases['field_meal_preference'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -227,7 +227,7 @@ function dco_registration_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_product_reference'
+  // Exported field_base: 'field_product_reference'.
   $field_bases['field_product_reference'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -251,7 +251,7 @@ function dco_registration_field_default_field_bases() {
     'type' => 'commerce_product_reference',
   );
 
-  // Exported field_base: 'field_registration_type'
+  // Exported field_base: 'field_registration_type'.
   $field_bases['field_registration_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -273,7 +273,7 @@ function dco_registration_field_default_field_bases() {
     'type' => 'registration',
   );
 
-  // Exported field_base: 'field_special_request'
+  // Exported field_base: 'field_special_request'.
   $field_bases['field_special_request'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -297,7 +297,7 @@ function dco_registration_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_tshirt_size'
+  // Exported field_base: 'field_tshirt_size'.
   $field_bases['field_tshirt_size'] = array(
     'active' => 1,
     'cardinality' => 1,

@@ -81,10 +81,11 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'commerce_order';
   $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'order_id';
   $handler->display->display_options['filters']['status']['value'] = array(
-    'completed' => 'completed',
     'pending' => 'pending',
     'processing' => 'processing',
+    'completed' => 'completed',
   );
   /* Filter criterion: Commerce Product: SKU */
   $handler->display->display_options['filters']['sku']['id'] = 'sku';
@@ -164,6 +165,16 @@ function dco_registration_views_default_views() {
       ),
     ),
     3 => array(
+      'title' => '2014',
+      'operator' => 'between',
+      'value' => array(
+        'type' => 'date',
+        'value' => '',
+        'min' => '2014-01-01',
+        'max' => '2014-12-31',
+      ),
+    ),
+    4 => array(
       'title' => '2015',
       'operator' => 'between',
       'value' => array(
@@ -398,7 +409,6 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['relationships']['author']['table'] = 'registration';
   $handler->display->display_options['relationships']['author']['field'] = 'author';
   $handler->display->display_options['relationships']['author']['label'] = 'Buyer';
-  $handler->display->display_options['relationships']['author']['required'] = TRUE;
   /* Relationship: Registration: User */
   $handler->display->display_options['relationships']['user_uid']['id'] = 'user_uid';
   $handler->display->display_options['relationships']['user_uid']['table'] = 'registration';
@@ -1412,7 +1422,8 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'registration';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'free_registration' => 'free_registration',
+    'all' => 'all',
+    'paid_registration' => 'paid_registration',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Commerce Product: SKU */
@@ -1450,10 +1461,13 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
-  $handler->display->display_options['style_options']['provide_file'] = 1;
-  $handler->display->display_options['style_options']['filename'] = 'attendees-%timestamp-full.xls';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['quote'] = 1;
+  $handler->display->display_options['style_options']['trim'] = 0;
+  $handler->display->display_options['style_options']['replace_newlines'] = 0;
+  $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Registration: Author entity author_uid */
@@ -1485,6 +1499,11 @@ function dco_registration_views_default_views() {
   $handler->display->display_options['relationships']['commerce_product_product_id']['field'] = 'commerce_product_product_id';
   $handler->display->display_options['relationships']['commerce_product_product_id']['relationship'] = 'commerce_line_items_line_item_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Registration: Full Name */
+  $handler->display->display_options['fields']['field_fullname']['id'] = 'field_fullname';
+  $handler->display->display_options['fields']['field_fullname']['table'] = 'field_data_field_fullname';
+  $handler->display->display_options['fields']['field_fullname']['field'] = 'field_fullname';
+  $handler->display->display_options['fields']['field_fullname']['element_label_colon'] = FALSE;
   /* Field: Profile: Personal information: Last name */
   $handler->display->display_options['fields']['value_2']['id'] = 'value_2';
   $handler->display->display_options['fields']['value_2']['table'] = 'profile_value_profile_last';
